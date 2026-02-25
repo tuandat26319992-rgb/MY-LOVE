@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>My Love Story</title>
+    <title>Mới quen nhau</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,7 +38,7 @@
       }
 
       .nav-inner {
-        max-width: 1080px;
+        max-width: 960px;
         margin: 0 auto;
         padding: 10px 20px;
         display: flex;
@@ -86,38 +86,26 @@
 
       main {
         flex: 1;
+        max-width: 960px;
+        margin: 32px auto 40px;
+        padding: 0 20px 40px;
       }
 
-      .hero {
-        max-width: 1080px;
-        margin: 36px auto 24px;
-        padding: 0 20px;
-        text-align: center;
+      .title-block h1 {
+        font-size: 30px;
+        margin-bottom: 6px;
       }
 
-      .hero h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
-      }
-
-      .hero h1 span {
-        background: linear-gradient(135deg, #ec4899, #6366f1);
-        -webkit-background-clip: text;
-        color: transparent;
-      }
-
-      .hero p {
+      .title-block p {
         margin: 0;
         color: #4b5563;
       }
 
-      .cards {
-        max-width: 1080px;
-        margin: 24px auto 40px;
-        padding: 0 20px 40px;
+      .two-cols {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 24px;
       }
 
       .card {
@@ -125,15 +113,11 @@
         border-radius: 20px;
         padding: 18px 18px 20px;
         box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
       }
 
-      .card-title {
+      .card h2 {
+        margin: 0 0 6px;
         font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 6px;
       }
 
       .card-sub {
@@ -142,21 +126,43 @@
         margin-bottom: 12px;
       }
 
-      .card p {
-        font-size: 13px;
-        color: #4b5563;
-        margin-bottom: 16px;
+      .timeline {
+        border-left: 2px solid rgba(236, 72, 153, 0.5);
+        padding-left: 14px;
       }
 
-      .card a {
-        align-self: flex-start;
-        text-decoration: none;
+      .item {
+        margin-bottom: 14px;
+      }
+
+      .item-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .item-date {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .item-text {
         font-size: 13px;
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #ec4899, #6366f1);
-        color: white;
-        box-shadow: 0 10px 25px rgba(129, 140, 248, 0.6);
+        color: #4b5563;
+      }
+
+      .photo-block {
+        border-radius: 18px;
+        overflow: hidden;
+        height: 220px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+      }
+
+      .photo-block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       footer {
@@ -171,7 +177,7 @@
       }
 
       @media (max-width: 840px) {
-        .cards {
+        .two-cols {
           grid-template-columns: minmax(0, 1fr);
         }
       }
@@ -186,63 +192,74 @@
             <div>MY LOVE STORY</div>
           </div>
           <nav>
-            <a href="moi-quen.html">Mới quen nhau</a>
-            <a href="di-choi.html">Những chuyến đi</a>
+            <a href="index.html">Trang chính</a>
+            <a href="di-choi.html">Đi chơi</a>
             <a href="ngay-cuoi.html">Ngày cưới</a>
           </nav>
         </div>
       </header>
 
       <main>
-        <section class="hero">
-          <h1>
-            Chuyện tình của <span>Anh &amp; Vợ</span>
-          </h1>
-          <p>Chia thành từng chương rõ ràng: mới quen, đi chơi, ngày cưới.</p>
+        <section class="title-block">
+          <h1>Mới quen nhau</h1>
+          <p>
+            Những ngày đầu còn ngại ngùng, tin nhắn dài cả cây số, đọc lại thấy
+            “phèn” nhưng thương.
+          </p>
         </section>
 
-        <section class="cards">
+        <section class="two-cols">
           <article class="card">
-            <div>
-              <div class="card-title">Mới quen nhau</div>
-              <div class="card-sub">Những tin nhắn và buổi gặp đầu tiên.</div>
-              <p>
-                Nơi ghi lại cảm xúc lúc mới nói chuyện, buổi hẹn đầu, ấn tượng ban đầu
-                về nhau.
-              </p>
+            <h2>Những mốc đầu tiên</h2>
+            <div class="card-sub">Bạn tự điền ngày tháng bên dưới.</div>
+
+            <div class="timeline">
+              <div class="item">
+                <div class="item-title">Lần đầu nhắn tin</div>
+                <div class="item-date">Ngày ... / ... / ....</div>
+                <div class="item-text">
+                  Viết lại ai nhắn trước, câu mở đầu là gì, lúc đó đọc xong cảm
+                  giác sao.
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="item-title">Buổi gặp đầu tiên</div>
+                <div class="item-date">Ngày ... / ... / .... – địa điểm ...</div>
+                <div class="item-text">
+                  Hai đứa gặp nhau ở đâu, ai tới trước, có vụ gì hài hoặc quê,
+                  chi tiết càng nhỏ càng vui.
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="item-title">Khoảnh khắc thấy “ừ, mình thích người này”</div>
+                <div class="item-date">Khoảng thời gian ...</div>
+                <div class="item-text">
+                  Một câu nói, một hành động nhỏ, hay một lần người kia giúp mình
+                  chuyện gì đó làm bạn nhớ hoài.
+                </div>
+              </div>
             </div>
-            <a href="moi-quen.html">Xem chương này</a>
           </article>
 
-          <article class="card">
-            <div>
-              <div class="card-title">Những chuyến đi chơi</div>
-              <div class="card-sub">Đà Lạt, Vũng Tàu, picnic, ăn vặt...</div>
-              <p>
-                Mỗi chuyến đi là một câu chuyện nhỏ: chụp hình, cãi nhau xíu, làm hoà,
-                kỉ niệm dễ thương.
-              </p>
+          <aside class="card">
+            <h2>Hình hồi mới quen</h2>
+            <div class="card-sub">
+              Thay tấm hình mẫu bằng hình thật của hai đứa.
             </div>
-            <a href="di-choi.html">Xem chương này</a>
-          </article>
-
-          <article class="card">
-            <div>
-              <div class="card-title">Ngày cưới xịn xò</div>
-              <div class="card-sub">Ngày chính thức rước nàng về dinh.</div>
-              <p>
-                Ghi lại timeline ngày cưới, khoảnh khắc trên sân khấu, lời hứa của hai
-                đứa, những tấm hình đặc biệt.
-              </p>
+            <div class="photo-block">
+              <img
+                src="https://images.pexels.com/photos/1449798/pexels-photo-1449798.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Mới quen"
+              />
             </div>
-            <a href="ngay-cuoi.html">Xem chương này</a>
-          </article>
+          </aside>
         </section>
       </main>
 
       <footer>
-        Làm bởi <span>chồng</span> – tặng <span>vợ</span>. Mỗi chương là một phần
-        kỉ niệm.
+        Chương: <span>Mới quen nhau</span> – vẫn còn nhiều chương phía sau.
       </footer>
     </div>
   </body>

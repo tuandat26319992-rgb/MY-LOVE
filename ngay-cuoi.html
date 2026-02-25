@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -191,45 +191,94 @@
       }
 
       .timeline {
-        border-left: 2px dashed rgba(236, 72, 153, 0.6);
-        padding-left: 14px;
+        position: relative;
+        padding-left: 24px;
+        margin-left: 4px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(
+          to bottom,
+          #f472b6,
+          #c084fc,
+          #a78bfa
+        );
+        border-radius: 3px;
       }
 
       .step {
-        margin-bottom: 14px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f472b6, #a78bfa);
+        box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.3);
       }
 
       .step-title {
-        font-size: 14px;
-        font-weight: 600;
-      }
-
-      .step-time {
-        font-size: 11px;
-        color: #9ca3af;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: "Nunito", "Poppins", sans-serif;
+        background: linear-gradient(135deg, #db2777 0%, #7c3aed 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.02em;
         margin-bottom: 4px;
       }
 
+      .step-time {
+        font-size: 12px;
+        font-family: "Nunito", "Poppins", sans-serif;
+        font-weight: 600;
+        color: #a78bfa;
+        margin-bottom: 6px;
+        letter-spacing: 0.03em;
+      }
+
       .step-text {
-        font-size: 13px;
-        color: #4b5563;
+        font-size: 14px;
+        font-family: "Nunito", "Poppins", sans-serif;
+        color: #475569;
+        line-height: 1.6;
       }
 
       .vows {
-        margin-top: 8px;
-        padding: 10px 12px;
-        border-radius: 14px;
+        margin-top: 16px;
+        padding: 16px 18px;
+        border-radius: 16px;
         background: linear-gradient(
           135deg,
-          rgba(236, 72, 153, 0.1),
-          rgba(59, 130, 246, 0.08)
+          rgba(244, 114, 182, 0.12) 0%,
+          rgba(167, 139, 250, 0.1) 100%
         );
-        font-size: 13px;
-        color: #374151;
+        font-size: 14px;
+        font-family: "Nunito", "Poppins", sans-serif;
+        color: #475569;
+        line-height: 1.65;
+        border: 1px solid rgba(244, 114, 182, 0.2);
       }
 
       .vows strong {
-        color: #b91c1c;
+        background: linear-gradient(135deg, #db2777, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
       }
         /* ẢNH CƯỚI NỔI BẬT CHỈNH ẢNH*/
       .photo-block {

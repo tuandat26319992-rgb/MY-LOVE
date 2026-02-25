@@ -91,10 +91,28 @@
         padding: 0 20px 40px;
       }
 
+      .title-block {
+        position: relative;
+        padding-bottom: 14px;
+        margin-bottom: 22px;
+      }
+
+      .title-block::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 80px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ec4899, #6366f1);
+      }
+
       .title-block h1 {
-        font-size: 34px;
+        font-size: 38px;
         margin-bottom: 6px;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.04em;
+        font-weight: 700;
       }
 
       .title-block p {
@@ -120,6 +138,9 @@
       .card h2 {
         margin: 0 0 6px;
         font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       .card-sub {
@@ -207,6 +228,8 @@
         font-size: 20px;
         font-weight: 600;
         margin-bottom: 4px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
       }
 
       .gallery-sub {
@@ -240,6 +263,12 @@
         overflow: hidden;
         height: 150px;
         box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.24);
       }
 
       .gallery-item img {

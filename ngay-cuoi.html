@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ngày cưới xịn xò</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #ffe1f2, #f4f4ff 45%, #ffe6d5);
+        color: #111827;
+      }
+
+      .page-wrap {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      }
+
+      .nav-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        color: #ec4899;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 13px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .brand:hover {
+        opacity: 0.85;
+      }
+
+      .brand-icon {
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ec4899, #6366f1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+      }
+
+      nav a {
+        margin-left: 16px;
+        font-size: 13px;
+        text-decoration: none;
+        color: #64748b;
+        padding: 4px 8px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #111827;
+        background: rgba(248, 250, 252, 0.9);
+      }
+
+      main {
+        flex: 1;
+        max-width: 1000px;
+        margin: 32px auto 40px;
+        padding: 0 20px 40px;
+      }
+
+      .title-block {
+        position: relative;
+        padding-bottom: 14px;
+        margin-bottom: 22px;
+      }
+
+      .title-block::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 80px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ec4899, #6366f1);
+      }
+
+      .title-block h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+        font-family: "Nunito", "Poppins", sans-serif;
+        background: linear-gradient(
+          90deg,
+          #f472b6 0%,
+          #c084fc 25%,
+          #a78bfa 50%,
+          #f472b6 75%,
+          #c084fc 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: color-shift 4s ease-in-out infinite;
+      }
+
+      @keyframes color-shift {
+        0%, 100% { background-position: 0% center; }
+        50% { background-position: 100% center; }
+      }
+
+      .title-block p {
+        margin: 0;
+        font-size: 16px;
+        font-family: "Nunito", "Poppins", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        background: linear-gradient(90deg, #f472b6, #a78bfa, #f472b6);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: color-shift 5s ease-in-out infinite;
+      }
+
+      .hero-layout {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 20px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h2 {
+        margin: 0 0 6px;
+        font-size: 19px;
+        font-weight: 700;
+        font-family: "Nunito", "Poppins", sans-serif;
+        letter-spacing: 0.03em;
+        background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .card-sub {
+        font-size: 13px;
+        font-family: "Nunito", "Poppins", sans-serif;
+        font-weight: 500;
+        color: #a78bfa;
+        margin-bottom: 12px;
+        letter-spacing: 0.02em;
+      }
+
+      .timeline {
+        border-left: 2px dashed rgba(236, 72, 153, 0.6);
+        padding-left: 14px;
+      }
+
+      .step {
+        margin-bottom: 14px;
+      }
+
+      .step-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .step-time {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .step-text {
+        font-size: 13px;
+        color: #4b5563;
+      }
+
+      .vows {
+        margin-top: 8px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(236, 72, 153, 0.1),
+          rgba(59, 130, 246, 0.08)
+        );
+        font-size: 13px;
+        color: #374151;
+      }
+
+      .vows strong {
+        color: #b91c1c;
+      }
+        /* ẢNH CƯỚI NỔI BẬT CHỈNH ẢNH*/
+      .photo-block {
+        border-radius: 18px;
+        overflow: hidden;
+        height: 340px;
+        box-shadow: 0 18px 30px rgba(15, 23, 30, 0.18);
+        margin-bottom: 10px;
+      }
+
+      .photo-block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .small-photos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .small-photos img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
+
+      /* GALLERY DÀI NHIỀU KHỐI */
+      .gallery-section {
+        margin-top: 32px;
+      }
+
+      .gallery-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .gallery-sub {
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 8px;
+      }
+
+      .gallery-note {
+        font-size: 13px;
+        color: #374151;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(236, 72, 153, 0.08),
+          rgba(59, 130, 246, 0.06)
+        );
+        margin-bottom: 14px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 150px;
+        box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.24);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .gallery-label {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        padding: 2px 8px;
+        font-size: 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        color: #f9fafb;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 11px;
+        color: #9ca3af;
+        padding: 10px 0 18px;
+      }
+
+      footer span {
+        color: #ec4899;
+      }
+
+      @media (max-width: 840px) {
+        .hero-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header>
+        <div class="nav-inner">
+          <a href="index.html" class="brand">
+            <div class="brand-icon">♥</div>
+            <div>DAT&NHU's LOVE STORY </div>
+          </a>
+          <nav>
+            <a href="index.html">MAIN PAGE</a>
+            <a href="moi-quen.html">MEMORIES</a>
+            <a href="di-choi.html">OUR TRIP</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="title-block">
+          <h1>Ngày cưới xịn xò con bò của tui (chú rể Đạt_Tula) và Zợ tui (cô dâu Như_Cira)</h1>
+          <p>Ngày chính thức gọi nhau là vợ chồng.</p>
+        </section>
+
+        <!-- TIMELINE + ẢNH NỔI BẬT -->
+        <section class="hero-layout">
+          <article class="card"> 
+            <h2>Timeline ngày cưới </h2>
+            <div class="card-sub">Ghi lại từng khung giờ quan trọng.</div>
+
+            <div class="timeline">
+              
+              <div class="step">
+                <div class="step-title">Chuẩn bị đám hỏi (dạm ngõ)</div>
+                <div class="step-time">ngày 16 tháng 8 năm 2025_Cần Thơ</div>
+                <div class="step-text">
+                  ngày mà 2 gia đình gặp mặt bàn chuyện thông gia và cho 2 bé nhận ba mẹ của nhau
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">Đăng kí kết hôn</div>
+                <div class="step-time">ngày 20 tháng 9 năm 2025_Đức Linh-BT</div>
+                <div class="step-text">
+                  2 đứa dung dăng dung dẻ dắt tay nhau lên xã (Cần Thơ) mà xã không cho bảo về quê chồng làm giấy kết hôn mới được.
+                
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">Chụp hình cưới</div>
+                <div class="step-text">rất là bực mình chú thợ chụp hình, chụp gì mà giờ trưa buồn ngủ gần chết. ảnh chụp toàn mắt mở không lên, cuối cùng hình phải để cô dâu chỉnh hết trơn. :-( Hứ hứ hứ
+
+             </div>
+              </div>
+
+              <div class="step">
+                <div class="step-title">Lễ Vu Quy ( bên nhà zợ Cira)</div>
+                <div class="step-time"> ngày 19 tháng 10 năm 2025 – Thánh lễ cưới</div>
+                <div class="step-text">
+                  Bữa nay được đeo nhẫn mới nek hehe! 
+              
+                  hứa hẹn nhiều lắm làm học nguyên 1 đêm sáng lên quên mất tiu. :-)
+             
+               </div>
+              </div>
+
+              <div class="step">
+                <div class="step-title">Lễ Tân Hôn ( Bên nhà tui đó.... !)</div>
+                <div class="step-time">ngày 26 tháng 10 năm 2025 – Rước nàng zề zinhhhh</div>
+                <div class="step-text">
+                  Khi mọi người đã về hết, hai đứa nhìn nhau và nhận ra “ừ, từ
+                  hôm nay mình là vợ chồng thật rồi” hehe. ( chưa biết ngày mai ra sao đã cười tooo)
+                </div>
+              </div>
+            </div>
+
+            <div class="vows">
+              <strong>Lời hứa nhỏ:</strong>
+              Chỗ này zợ tui xí rồi "hứa là sẽ iu tui suốt đời suốt kiếp luônnnn"
+            </div>
+            <div class="vows">
+              <strong>Lời hứa siêu to:</strong>
+              " Anh Phero Nguyễn Tuấn Đạt xin nhận em Maria Nguyễn Ngọc Quỳnh Như làm vợ và hứa giữ lòng chung thủy với em.
+              khi khỏe mạnh cũng như lúc yếu đau, khi thịnh vượng cũng như lúc gian nan để luôn yêu thương và tôn trọng em mọi ngày trong suốt cuộc đời anh "
+            </div>
+          </article>
+
+
+          
+
+          <aside class="card">
+            <h2>Ảnh cưới xinh đẹ<picture></picture></h2>
+            <div class="card-sub">
+              Một vài tấm tiêu biểu cho ngày cưới.
+            </div>
+
+            <div class="photo-block">
+              <img src="image/hinh-cong/cong-1.JPG" alt="Cổng cưới" />
+            </div>
+
+            <div class="small-photos">
+              <img src="image/cuoi-nha-gai/gai-1.JPG" alt="Nhà gái" />
+              <img src="image/cuoi-nha-trai/trai-1.jpg" alt="Nhà trai" />
+              <img src="image/bao-hy/bao-1.JPG" alt="Báo hỷ" />
+              <img src="image/cuoi-nha-gai/gai-2.JPG" alt="Khoảnh khắc vui" />
+            </div>
+          </aside>
+        </section>
+
+        <!-- NHÀ GÁI -->
+        <section class="gallery-section" id="nha-gai">
+          <div class="gallery-title">Nhà gái</div>
+          <div class="gallery-sub">
+            Hình gia đình, họ hàng, bạn bè bên nhà gái trong ngày cưới.
+          </div>
+          <div class="gallery-note">
+            Đây là nơi mày viết cảm xúc về bên nhà vợ: không khí ở nhà gái, những
+            người quan trọng, khoảnh khắc làm mày nhớ nhất.
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-1.JPG" alt="Nhà gái 1" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-2.JPG" alt="Nhà gái 2" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-3.JPG" alt="Nhà gái 3" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-4.JPG" alt="Nhà gái 4" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-5.JPG" alt="Nhà gái 5" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-6.JPG" alt="Nhà gái 6" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-7.JPG" alt="Nhà gái 7" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-8.JPG" alt="Nhà gái 8" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-9.JPG" alt="Nhà gái 9" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-10.JPG" alt="Nhà gái 10" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-11.JPG" alt="Nhà gái 11" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-12.JPG" alt="Nhà gái 12" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-13.JPG" alt="Nhà gái 13" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-14.JPG" alt="Nhà gái 14" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-15.JPG" alt="Nhà gái 15" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-16.JPG" alt="Nhà gái 16" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-17.JPG" alt="Nhà gái 17" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-18.JPG" alt="Nhà gái 18" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-19.JPG" alt="Nhà gái 19" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-20.JPG" alt="Nhà gái 20" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-gai/gai-21.JPG" alt="Nhà gái 21" />
+              <div class="gallery-label">Nhà gái</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NHÀ TRAI -->
+        <section class="gallery-section" id="nha-trai">
+          <div class="gallery-title">Nhà trai</div>
+          <div class="gallery-sub">
+            Không khí bên nhà trai: chuẩn bị, lên xe, tới rước dâu.
+          </div>
+          <div class="gallery-note">
+            Đoạn này mày có thể kể cảm xúc của mình, của ba mẹ, anh em bên nhà
+            trai trước giờ rước dâu, mấy câu chuyện hài trong lúc chuẩn bị.
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-1.jpg" alt="Nhà trai 1" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-2.jpg" alt="Nhà trai 2" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-3.jpg" alt="Nhà trai 3" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-4.jpg" alt="Nhà trai 4" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-5.jpg" alt="Nhà trai 5" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-6.jpg" alt="Nhà trai 6" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-7.jpg" alt="Nhà trai 7" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-8.jpg" alt="Nhà trai 8" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-9.jpg" alt="Nhà trai 9" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-10.jpg" alt="Nhà trai 10" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-11.jpg" alt="Nhà trai 11" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-12.jpg" alt="Nhà trai 12" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-13.jpg" alt="Nhà trai 13" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-14.jpg" alt="Nhà trai 14" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-15.jpg" alt="Nhà trai 15" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-16.jpg" alt="Nhà trai 16" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/cuoi-nha-trai/trai-17.jpg" alt="Nhà trai 17" />
+              <div class="gallery-label">Nhà trai</div>
+            </div>
+            </div>
+        </section>
+
+        <!-- CỔNG CƯỚI / DECOR -->
+        <section class="gallery-section" id="hinh-cuoi">
+          <div class="gallery-title">Cổng cưới &amp; trang trí</div>
+          <div class="gallery-sub">
+            Cổng hoa, bàn gallery, góc decor mà hai đứa thích nhất.
+          </div>
+          <div class="gallery-note">
+            Viết vài dòng về theme trang trí, màu chủ đạo, ai là người chọn mẫu
+            cổng, có chi tiết nào làm hai đứa thích nhất.
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="image/hinh-cong/cong-1.JPG" alt="Cổng cưới 1" />
+              <div class="gallery-label">Cổng cưới</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/hinh-cong/cong-2.JPG" alt="Cổng cưới 2" />
+              <div class="gallery-label">Cổng cưới</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/hinh-cong/cong-3.JPG" alt="Cổng cưới 3" />
+              <div class="gallery-label">Cổng cưới</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BÁO HỶ / THIỆP -->
+        <section class="gallery-section" id="bao-hy">
+          <div class="gallery-title">Báo hỷ &amp; (tiệc của bạn bè cô dâu và chú rể)</div>
+          <div class="gallery-sub">
+            Những tấm thiệp, bảng báo hỷ, câu chữ dễ thương mà hai đứa chọn.
+          </div>
+          <div class="gallery-note">
+            Ghi lại lý do mày chọn mẫu thiệp này, câu chữ nào hai đứa thích
+            nhất, hoặc lời nhắn nhủ dành cho những người nhận thiệp.
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="image/bao-hy/bao-1.JPG" alt="Báo hỷ 1" />
+              <div class="gallery-label">Báo hỷ</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/bao-hy/bao-2.JPG" alt="Báo hỷ 2" />
+              <div class="gallery-label">Báo hỷ</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/bao-hy/bao-3.JPG" alt="Báo hỷ 3" />
+              <div class="gallery-label">Báo hỷ</div>
+            </div>
+            <div class="gallery-item">
+              <img src="image/bao-hy/bao-4.JPG" alt="Báo hỷ 4" />
+              <div class="gallery-label">Báo hỷ</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        Chương: <span>Ngày cưới</span> – mở đầu cho rất nhiều kỉ niệm mới.
+      </footer>
+    </div>
+  </body>
+</html>

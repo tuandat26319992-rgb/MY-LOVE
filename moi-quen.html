@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mới quen nhau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #ffe1f2, #f4f4ff 45%, #ffe6d5);
+        color: #111827;
+      }
+
+      .page-wrap {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      }
+
+      .nav-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        color: #ec4899;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+      .brand-icon {
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ec4899, #6366f1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+      }
+
+      nav a {
+        margin-left: 16px;
+        font-size: 13px;
+        text-decoration: none;
+        color: #64748b;
+        padding: 4px 8px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #111827;
+        background: rgba(248, 250, 252, 0.9);
+      }
+
+      main {
+        flex: 1;
+        max-width: 960px;
+        margin: 32px auto 40px;
+        padding: 0 20px 40px;
+      }
+
+      .title-block h1 {
+        font-size: 30px;
+        margin-bottom: 6px;
+      }
+
+      .title-block p {
+        margin: 0;
+        color: #4b5563;
+      }
+
+      .two-cols {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 20px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h2 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+
+      .card-sub {
+        font-size: 12px;
+        color: #9ca3af;
+        margin-bottom: 12px;
+      }
+
+      .timeline {
+        border-left: 2px solid rgba(236, 72, 153, 0.5);
+        padding-left: 14px;
+      }
+
+      .item {
+        margin-bottom: 14px;
+      }
+
+      .item-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .item-date {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .item-text {
+        font-size: 13px;
+        color: #4b5563;
+      }
+
+      .photo-block {
+        border-radius: 18px;
+        overflow: hidden;
+        height: 220px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+      }
+
+      .photo-block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 11px;
+        color: #9ca3af;
+        padding: 10px 0 18px;
+      }
+
+      footer span {
+        color: #ec4899;
+      }
+
+      @media (max-width: 840px) {
+        .two-cols {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header>
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-icon">♥</div>
+            <div>MY LOVE STORY</div>
+          </div>
+          <nav>
+            <a href="index.html">Trang chính</a>
+            <a href="di-choi.html">Đi chơi</a>
+            <a href="ngay-cuoi.html">Ngày cưới</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="title-block">
+          <h1>Mới quen nhau</h1>
+          <p>
+            Những ngày đầu còn ngại ngùng, tin nhắn dài cả cây số, đọc lại thấy
+            “phèn” nhưng thương.
+          </p>
+        </section>
+
+        <section class="two-cols">
+          <article class="card">
+            <h2>Những mốc đầu tiên</h2>
+            <div class="card-sub">Bạn tự điền ngày tháng bên dưới.</div>
+
+            <div class="timeline">
+              <div class="item">
+                <div class="item-title">Lần đầu nhắn tin</div>
+                <div class="item-date">Ngày ... / ... / ....</div>
+                <div class="item-text">
+                  Viết lại ai nhắn trước, câu mở đầu là gì, lúc đó đọc xong cảm
+                  giác sao.
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="item-title">Buổi gặp đầu tiên</div>
+                <div class="item-date">Ngày ... / ... / .... – địa điểm ...</div>
+                <div class="item-text">
+                  Hai đứa gặp nhau ở đâu, ai tới trước, có vụ gì hài hoặc quê,
+                  chi tiết càng nhỏ càng vui.
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="item-title">Khoảnh khắc thấy “ừ, mình thích người này”</div>
+                <div class="item-date">Khoảng thời gian ...</div>
+                <div class="item-text">
+                  Một câu nói, một hành động nhỏ, hay một lần người kia giúp mình
+                  chuyện gì đó làm bạn nhớ hoài.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <aside class="card">
+            <h2>Hình hồi mới quen</h2>
+            <div class="card-sub">
+              Thay tấm hình mẫu bằng hình thật của hai đứa.
+            </div>
+            <div class="photo-block">
+              <img
+                src="https://images.pexels.com/photos/1449798/pexels-photo-1449798.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Mới quen"
+              />
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer>
+        Chương: <span>Mới quen nhau</span> – vẫn còn nhiều chương phía sau.
+      </footer>
+    </div>
+  </body>
+</html>

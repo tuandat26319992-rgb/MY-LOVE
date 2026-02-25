@@ -19,7 +19,7 @@
         font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
         background: radial-gradient(circle at top left, #ffe1f2, #f4f4ff 45%, #ffe6d5);
-        color: #111827;
+        color: #0f172a;
       }
 
       .page-wrap {
@@ -88,75 +88,189 @@
         flex: 1;
       }
 
-      .hero {
+      /* HERO LỚN 2 CỘT */
+      .hero-wrap {
         max-width: 1080px;
-        margin: 36px auto 24px;
+        margin: 32px auto 18px;
         padding: 0 20px;
-        text-align: center;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 26px;
+        align-items: center;
       }
 
-      .hero h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
+      .hero-text h1 {
+        font-size: 34px;
+        line-height: 1.1;
+        margin: 0 0 10px;
       }
 
-      .hero h1 span {
+      .hero-text h1 span {
         background: linear-gradient(135deg, #ec4899, #6366f1);
         -webkit-background-clip: text;
         color: transparent;
       }
 
-      .hero p {
-        margin: 0;
+      .hero-text p {
+        margin: 0 0 16px;
         color: #4b5563;
       }
 
-      .cards {
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .tag-pill {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(236, 72, 153, 0.09);
+        color: #be185d;
+      }
+
+      .hero-meta {
+        font-size: 12px;
+        color: #9ca3af;
+      }
+
+      .hero-card {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: radial-gradient(circle at top left, #fecaca, #e5e7eb);
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.2);
+        padding: 18px 18px 16px;
+      }
+
+      .hero-photo {
+        height: 210px;
+        border-radius: 18px;
+        background-image: url("https://images.pexels.com/photos/3693890/pexels-photo-3693890.jpeg?auto=compress&cs=tinysrgb&w=1200");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-card-footer {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: #374151;
+      }
+
+      .pill-small {
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        color: white;
+      }
+
+      .pill-small span {
+        color: #fbbf24;
+      }
+
+      /* HÀNG “3 CHƯƠNG” VÀ PREVIEW */
+      .sections-row {
         max-width: 1080px;
-        margin: 24px auto 40px;
-        padding: 0 20px 40px;
+        margin: 6px auto 40px;
+        padding: 0 20px 38px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+        gap: 22px;
+      }
+
+      .cards {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+        gap: 14px;
       }
 
       .card {
         background: rgba(255, 255, 255, 0.98);
-        border-radius: 20px;
-        padding: 18px 18px 20px;
-        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+        border-radius: 18px;
+        padding: 14px 14px 16px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
       }
 
       .card-title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
       }
 
       .card-sub {
-        font-size: 12px;
+        font-size: 11px;
         color: #9ca3af;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
 
       .card p {
-        font-size: 13px;
+        font-size: 12px;
         color: #4b5563;
-        margin-bottom: 16px;
+        margin: 0 0 12px;
       }
 
       .card a {
         align-self: flex-start;
         text-decoration: none;
-        font-size: 13px;
-        padding: 6px 14px;
+        font-size: 12px;
+        padding: 6px 12px;
         border-radius: 999px;
         background: linear-gradient(135deg, #ec4899, #6366f1);
         color: white;
         box-shadow: 0 10px 25px rgba(129, 140, 248, 0.6);
+      }
+
+      /* PREVIEW TIMELINE BÊN PHẢI */
+      .preview-card {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 20px;
+        padding: 16px 16px 18px;
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .preview-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .preview-sub {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 10px;
+      }
+
+      .preview-timeline {
+        border-left: 2px solid rgba(236, 72, 153, 0.4);
+        padding-left: 10px;
+        font-size: 12px;
+        color: #4b5563;
+      }
+
+      .preview-item {
+        margin-bottom: 8px;
+      }
+
+      .preview-label {
+        font-weight: 600;
+        font-size: 12px;
+        color: #111827;
+      }
+
+      .preview-link {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 12px;
+        color: #6366f1;
+        text-decoration: none;
       }
 
       footer {
@@ -170,7 +284,16 @@
         color: #ec4899;
       }
 
-      @media (max-width: 840px) {
+      @media (max-width: 980px) {
+        .hero-wrap {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .sections-row {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      @media (max-width: 720px) {
         .cards {
           grid-template-columns: minmax(0, 1fr);
         }
@@ -194,49 +317,109 @@
       </header>
 
       <main>
-        <section class="hero">
-          <h1>
-            Chuyện tình của <span>Anh &amp; Vợ</span>
-          </h1>
-          <p>Chia thành từng chương rõ ràng: mới quen, đi chơi, ngày cưới.</p>
+        <!-- HERO CHÍNH: TEXT + ẢNH LỚN -->
+        <section class="hero-wrap">
+          <div class="hero-text">
+            <h1>
+              Chuyện tình của <span>Anh &amp; Vợ</span>
+            </h1>
+            <p>
+              Một “album online” chia thành từng chương: lúc mới quen, những
+              chuyến đi, tới ngày cưới xịn xò con bò.
+            </p>
+            <div class="hero-tags">
+              <div class="tag-pill">Mới quen nhau</div>
+              <div class="tag-pill">Đi chơi khắp nơi</div>
+              <div class="tag-pill">Ngày cưới</div>
+            </div>
+            <div class="hero-meta">
+              Nhấn vào từng chương bên dưới để đọc lại kỉ niệm chi tiết.
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-photo"></div>
+            <div class="hero-card-footer">
+              <div>Góc nhỏ lưu lại chuyện của hai đứa mình.</div>
+              <div class="pill-small">
+                Made with <span>♥</span> by chồng
+              </div>
+            </div>
+          </aside>
         </section>
 
-        <section class="cards">
-          <article class="card">
-            <div>
-              <div class="card-title">Mới quen nhau</div>
-              <div class="card-sub">Những tin nhắn và buổi gặp đầu tiên.</div>
-              <p>
-                Nơi ghi lại cảm xúc lúc mới nói chuyện, buổi hẹn đầu, ấn tượng ban đầu
-                về nhau.
-              </p>
-            </div>
-            <a href="moi-quen.html">Xem chương này</a>
-          </article>
+        <!-- HÀNG 3 CHƯƠNG + PREVIEW TIMELINE NHỎ -->
+        <section class="sections-row">
+          <div class="cards">
+            <article class="card">
+              <div>
+                <div class="card-title">Mới quen nhau</div>
+                <div class="card-sub">Những tin nhắn và buổi gặp đầu tiên.</div>
+                <p>
+                  Nơi ghi lại cảm xúc lúc mới nói chuyện, buổi hẹn đầu và ấn
+                  tượng ban đầu về nhau.
+                </p>
+              </div>
+              <a href="moi-quen.html">Vào xem chương này</a>
+            </article>
 
-          <article class="card">
-            <div>
-              <div class="card-title">Những chuyến đi chơi</div>
-              <div class="card-sub">Đà Lạt, Vũng Tàu, picnic, ăn vặt...</div>
-              <p>
-                Mỗi chuyến đi là một câu chuyện nhỏ: chụp hình, cãi nhau xíu, làm hoà,
-                kỉ niệm dễ thương.
-              </p>
-            </div>
-            <a href="di-choi.html">Xem chương này</a>
-          </article>
+            <article class="card">
+              <div>
+                <div class="card-title">Những chuyến đi chơi</div>
+                <div class="card-sub">Đà Lạt, Vũng Tàu, picnic, ăn vặt...</div>
+                <p>
+                  Mỗi chuyến đi là một câu chuyện nhỏ: chụp hình, cãi nhau xíu,
+                  làm hoà, có lúc mệt nhưng rất vui.
+                </p>
+              </div>
+              <a href="di-choi.html">Vào xem chương này</a>
+            </article>
 
-          <article class="card">
-            <div>
-              <div class="card-title">Ngày cưới xịn xò</div>
-              <div class="card-sub">Ngày chính thức rước nàng về dinh.</div>
-              <p>
-                Ghi lại timeline ngày cưới, khoảnh khắc trên sân khấu, lời hứa của hai
-                đứa, những tấm hình đặc biệt.
-              </p>
+            <article class="card">
+              <div>
+                <div class="card-title">Ngày cưới xịn xò</div>
+                <div class="card-sub">Ngày chính thức rước nàng về dinh.</div>
+                <p>
+                  Ghi lại timeline ngày cưới, khoảnh khắc trên sân khấu, lời
+                  hứa và những tấm hình đặc biệt.
+                </p>
+              </div>
+              <a href="ngay-cuoi.html">Vào xem chương này</a>
+            </article>
+          </div>
+
+          <aside class="preview-card">
+            <div class="preview-title">Một vài dòng nháp kỉ niệm</div>
+            <div class="preview-sub">
+              Mô tả nhanh vài khoảnh khắc – chi tiết nằm trong từng chương.
             </div>
-            <a href="ngay-cuoi.html">Xem chương này</a>
-          </article>
+            <div class="preview-timeline">
+              <div class="preview-item">
+                <div class="preview-label">Lần đầu nhắn tin</div>
+                <div>
+                  Tin nhắn mở đầu nhìn thì bình thường nhưng đọc lại vẫn thấy
+                  mắc cười.
+                </div>
+              </div>
+              <div class="preview-item">
+                <div class="preview-label">Chuyến đi xa đầu tiên</div>
+                <div>
+                  Hai đứa vừa đi vừa nói chuyện cả chặng đường, tới nơi mệt mà
+                  vẫn cười.
+                </div>
+              </div>
+              <div class="preview-item">
+                <div class="preview-label">Khoảnh khắc trên sân khấu</div>
+                <div>
+                  Lúc nhìn nhau giữa đám đông và nhận ra “ừ, giờ mình là vợ
+                  chồng thiệt rồi”.
+                </div>
+              </div>
+            </div>
+            <a class="preview-link" href="moi-quen.html">
+              Bắt đầu đọc từ chương “Mới quen nhau” →
+            </a>
+          </aside>
         </section>
       </main>
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kỉ niệm của anh với vợ</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f7f4ff;
+        color: #222;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 24px;
+        z-index: 10;
+      }
+      header .logo {
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #7b2cff;
+      }
+      header nav a {
+        margin-left: 16px;
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+      }
+      header nav a:hover {
+        color: #7b2cff;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 32px auto 64px;
+        padding: 0 16px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 40px 0 24px;
+      }
+      .hero h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+        color: #4b1bb3;
+      }
+      .hero p {
+        color: #555;
+      }
+
+      .section {
+        background: white;
+        border-radius: 16px;
+        padding: 24px 20px;
+        margin-top: 24px;
+        box-shadow: 0 14px 40px rgba(31, 41, 55, 0.08);
+      }
+      .section h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: #4b1bb3;
+      }
+      .section .date {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 12px;
+      }
+      .section p {
+        line-height: 1.6;
+        margin: 6px 0;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: #f3ebff;
+        color: #6a21e6;
+        margin-right: 4px;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 12px;
+        color: #aaa;
+        margin-bottom: 24px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Kỉ niệm của chúng mình</div>
+      <nav>
+        <a href="#new-love">Mới quen nhau</a>
+        <a href="#trips">Những chuyến đi chơi</a>
+        <a href="#wedding">Ngày cưới</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Kỉ niệm của anh với vợ</h1>
+        <p>
+          Lưu lại từng khoảnh khắc nhỏ xíu nhưng rất đáng nhớ của hai đứa mình.
+        </p>
+      </section>
+
+      <section id="new-love" class="section">
+        <h2>Kỉ niệm mới quen nhau</h2>
+        <div class="date">Ngày ... / ... / ....</div>
+        <div>
+          <span class="tag">Lần đầu gặp</span>
+          <span class="tag">Hồi còn rung rinh</span>
+        </div>
+        <p>Chỗ này anh sẽ viết lại câu chuyện lần đầu tụi mình gặp nhau.</p>
+        <p>Ví dụ: gặp ở đâu, cảm giác lúc đó thế nào, câu nói đầu tiên là gì...</p>
+      </section>
+
+      <section id="trips" class="section">
+        <h2>Kỉ niệm đi chơi</h2>
+        <div class="date">Nhiều ngày, nhiều nơi ♥</div>
+        <div>
+          <span class="tag">Đi chơi</span>
+          <span class="tag">Chụp hình</span>
+        </div>
+        <p>
+          Ở đây anh có thể liệt kê từng chuyến đi: Đà Lạt, Vũng Tàu, picnic, xem
+          phim, ăn vặt...
+        </p>
+        <p>Mỗi ý nhỏ là một kỉ niệm, sau này muốn thêm hình thì chèn ảnh vào đây.</p>
+      </section>
+
+      <section id="wedding" class="section">
+        <h2>Kỉ niệm ngày cưới (xịn xò con bò)</h2>
+        <div class="date">Ngày cưới: ... / ... / ....</div>
+        <div>
+          <span class="tag">Cưới vợ</span>
+          <span class="tag">Ngày đặc biệt</span>
+        </div>
+        <p>Viết lại cảm xúc ngày cưới, ai khóc, ai cười, ai say, ai giành micro.</p>
+        <p>Chỗ này sau này có thể thêm timeline, ảnh cưới, lời chúc của mọi người.</p>
+      </section>
+    </main>
+
+    <footer>
+      Làm bởi chồng, tặng vợ ♥
+    </footer>
+  </body>
+</html>

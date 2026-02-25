@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
       * {
         box-sizing: border-box;
@@ -49,31 +50,54 @@
       .brand {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
         font-weight: 600;
-        color: #ec4899;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-size: 13px;
+        font-family: "Nunito", "Poppins", sans-serif;
+        letter-spacing: 0.04em;
+        font-size: 14px;
         text-decoration: none;
         cursor: pointer;
-        transition: opacity 0.2s ease;
+        transition: all 0.25s ease;
+        color: #64748b;
       }
 
       .brand:hover {
-        opacity: 0.85;
+        color: #db2777;
+      }
+
+      .brand-text {
+        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.25s ease;
+      }
+
+      .brand:hover .brand-text {
+        background: linear-gradient(135deg, #db2777 0%, #7c3aed 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
       .brand-icon {
-        width: 26px;
-        height: 26px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #ec4899, #6366f1);
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, rgba(219, 39, 119, 0.12), rgba(124, 58, 237, 0.12));
+        border: 1px solid rgba(219, 39, 119, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
-        font-size: 14px;
+        color: #a78bfa;
+        font-size: 16px;
+        transition: all 0.25s ease;
+      }
+
+      .brand:hover .brand-icon {
+        background: linear-gradient(135deg, rgba(219, 39, 119, 0.2), rgba(124, 58, 237, 0.2));
+        border-color: rgba(219, 39, 119, 0.4);
+        color: #db2777;
       }
 
       nav a {
@@ -239,6 +263,16 @@
         background-clip: text;
         letter-spacing: 0.02em;
         margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .step-title .step-icon {
+        -webkit-text-fill-color: initial;
+        color: #f472b6;
+        font-size: 18px;
+        flex-shrink: 0;
       }
 
       .step-time {
@@ -279,6 +313,28 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .vows .vow-icon {
+        -webkit-text-fill-color: initial;
+        color: #f472b6;
+        font-size: 16px;
+      }
+
+      .card h2,
+      .card h2 .title-icon {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .card h2 .title-icon,
+      .gallery-title .title-icon {
+        margin-right: 8px;
+        color: #ec4899;
+        font-size: 1em;
       }
         /* ẢNH CƯỚI NỔI BẬT CHỈNH ẢNH*/
       .photo-block {
@@ -321,6 +377,8 @@
         margin-bottom: 4px;
         letter-spacing: 0.06em;
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
       }
 
       .gallery-sub {
@@ -407,7 +465,7 @@
         <div class="nav-inner">
           <a href="index.html" class="brand">
             <div class="brand-icon">♥</div>
-            <div>DAT&NHU's LOVE STORY </div>
+            <span class="brand-text">DAT & NHU · Love Story</span>
           </a>
           <nav>
             <a href="index.html">MAIN PAGE</a>
@@ -426,20 +484,20 @@
         <!-- TIMELINE + ẢNH NỔI BẬT -->
         <section class="hero-layout">
           <article class="card"> 
-            <h2>Timeline ngày cưới </h2>
+            <h2><i class="fa-solid fa-calendar-heart title-icon"></i>Timeline ngày cưới</h2>
             <div class="card-sub">Ghi lại từng khung giờ quan trọng.</div>
 
             <div class="timeline">
               
               <div class="step">
-                <div class="step-title">Chuẩn bị đám hỏi (dạm ngõ)</div>
+                <div class="step-title"><i class="fa-solid fa-gift step-icon"></i>Chuẩn bị đám hỏi (dạm ngõ)</div>
                 <div class="step-time">ngày 16 tháng 8 năm 2025_Cần Thơ</div>
                 <div class="step-text">
                   ngày mà 2 gia đình gặp mặt bàn chuyện thông gia và cho 2 bé nhận ba mẹ của nhau
                 </div>
               </div>
               <div class="step">
-                <div class="step-title">Đăng kí kết hôn</div>
+                <div class="step-title"><i class="fa-solid fa-pen-fancy step-icon"></i>Đăng kí kết hôn</div>
                 <div class="step-time">ngày 20 tháng 9 năm 2025_Đức Linh-BT</div>
                 <div class="step-text">
                   2 đứa dung dăng dung dẻ dắt tay nhau lên xã (Cần Thơ) mà xã không cho bảo về quê chồng làm giấy kết hôn mới được.
@@ -447,14 +505,14 @@
                 </div>
               </div>
               <div class="step">
-                <div class="step-title">Chụp hình cưới</div>
+                <div class="step-title"><i class="fa-solid fa-camera step-icon"></i>Chụp hình cưới</div>
                 <div class="step-text">rất là bực mình chú thợ chụp hình, chụp gì mà giờ trưa buồn ngủ gần chết. ảnh chụp toàn mắt mở không lên, cuối cùng hình phải để cô dâu chỉnh hết trơn. :-( Hứ hứ hứ
 
              </div>
               </div>
 
               <div class="step">
-                <div class="step-title">Lễ Vu Quy ( bên nhà zợ Cira)</div>
+                <div class="step-title"><i class="fa-solid fa-church step-icon"></i>Lễ Vu Quy ( bên nhà zợ Cira)</div>
                 <div class="step-time"> ngày 19 tháng 10 năm 2025 – Thánh lễ cưới</div>
                 <div class="step-text">
                   Bữa nay được đeo nhẫn mới nek hehe! 
@@ -465,7 +523,7 @@
               </div>
 
               <div class="step">
-                <div class="step-title">Lễ Tân Hôn ( Bên nhà tui đó.... !)</div>
+                <div class="step-title"><i class="fa-solid fa-champagne-glasses step-icon"></i>Lễ Tân Hôn ( Bên nhà tui đó.... !)</div>
                 <div class="step-time">ngày 26 tháng 10 năm 2025 – Rước nàng zề zinhhhh</div>
                 <div class="step-text">
                   Khi mọi người đã về hết, hai đứa nhìn nhau và nhận ra “ừ, từ
@@ -475,11 +533,11 @@
             </div>
 
             <div class="vows">
-              <strong>Lời hứa nhỏ:</strong>
+              <strong><i class="fa-solid fa-heart vow-icon"></i>Lời hứa nhỏ:</strong>
               Chỗ này zợ tui xí rồi "hứa là sẽ iu tui suốt đời suốt kiếp luônnnn"
             </div>
             <div class="vows">
-              <strong>Lời hứa siêu to:</strong>
+              <strong><i class="fa-solid fa-gem vow-icon"></i>Lời hứa siêu to:</strong>
               " Anh Phero Nguyễn Tuấn Đạt xin nhận em Maria Nguyễn Ngọc Quỳnh Như làm vợ và hứa giữ lòng chung thủy với em.
               khi khỏe mạnh cũng như lúc yếu đau, khi thịnh vượng cũng như lúc gian nan để luôn yêu thương và tôn trọng em mọi ngày trong suốt cuộc đời anh "
             </div>
@@ -489,7 +547,7 @@
           
 
           <aside class="card">
-            <h2>Ảnh cưới xinh đẹ<picture></picture></h2>
+                        <h2><i class="fa-solid fa-images title-icon"></i>Ảnh cưới xinh đẹp</h2>
             <div class="card-sub">
               Một vài tấm tiêu biểu cho ngày cưới.
             </div>
@@ -509,7 +567,7 @@
 
         <!-- NHÀ GÁI -->
         <section class="gallery-section" id="nha-gai">
-          <div class="gallery-title">Nhà gái</div>
+          <div class="gallery-title"><i class="fa-solid fa-person-dress title-icon"></i>Nhà gái</div>
           <div class="gallery-sub">
             Hình gia đình, họ hàng, bạn bè bên nhà gái trong ngày cưới.
           </div>
@@ -607,7 +665,7 @@
 
         <!-- NHÀ TRAI -->
         <section class="gallery-section" id="nha-trai">
-          <div class="gallery-title">Nhà trai</div>
+          <div class="gallery-title"><i class="fa-solid fa-person title-icon"></i>Nhà trai</div>
           <div class="gallery-sub">
             Không khí bên nhà trai: chuẩn bị, lên xe, tới rước dâu.
           </div>
@@ -689,7 +747,7 @@
 
         <!-- CỔNG CƯỚI / DECOR -->
         <section class="gallery-section" id="hinh-cuoi">
-          <div class="gallery-title">Cổng cưới &amp; trang trí</div>
+          <div class="gallery-title"><i class="fa-solid fa-flower title-icon"></i>Cổng cưới &amp; trang trí</div>
           <div class="gallery-sub">
             Cổng hoa, bàn gallery, góc decor mà hai đứa thích nhất.
           </div>
@@ -715,7 +773,7 @@
 
         <!-- BÁO HỶ / THIỆP -->
         <section class="gallery-section" id="bao-hy">
-          <div class="gallery-title">Báo hỷ &amp; (tiệc của bạn bè cô dâu và chú rể)</div>
+          <div class="gallery-title"><i class="fa-solid fa-envelope-circle-check title-icon"></i>Báo hỷ &amp; (tiệc của bạn bè cô dâu và chú rể)</div>
           <div class="gallery-sub">
             Những tấm thiệp, bảng báo hỷ, câu chữ dễ thương mà hai đứa chọn.
           </div>

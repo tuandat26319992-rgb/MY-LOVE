@@ -2,161 +2,512 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Kỉ niệm của anh với vợ</title>
+    <title>My Love Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #593baa;
-        color: #222;
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #ffe1f2, #f4f4ff 45%, #ffe6d5);
+        color: #1f2933;
       }
+
+      .page-wrap {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER / NAV */
       header {
         position: sticky;
         top: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #eee;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      }
+
+      .nav-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 10px 20px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 10px 24px;
-        z-index: 10;
+        justify-content: space-between;
       }
-      header .logo {
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        color: #7b2cff;
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        color: #ec4899;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 13px;
       }
-      header nav a {
-        margin-left: 16px;
-        text-decoration: none;
-        color: #555;
+
+      .brand-icon {
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ec4899, #6366f1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
         font-size: 14px;
       }
-      header nav a:hover {
-        color: #7b2cff;
+
+      nav a {
+        margin-left: 16px;
+        font-size: 13px;
+        text-decoration: none;
+        color: #64748b;
+        padding: 4px 8px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #111827;
+        background: rgba(248, 250, 252, 0.9);
       }
 
       main {
-        max-width: 900px;
-        margin: 32px auto 64px;
-        padding: 0 16px;
+        flex: 1;
       }
 
+      /* HERO */
       .hero {
-        text-align: center;
-        padding: 40px 0 24px;
-      }
-      .hero h1 {
-        font-size: 32px;
-        margin-bottom: 8px;
-        color: #4b1bb3;
-      }
-      .hero p {
-        color: #555;
+        max-width: 1080px;
+        margin: 32px auto 10px;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 32px;
+        align-items: center;
       }
 
-      .section {
-        background: white;
-        border-radius: 16px;
-        padding: 24px 20px;
-        margin-top: 24px;
-        box-shadow: 0 14px 40px rgba(31, 41, 55, 0.08);
-      }
-      .section h2 {
-        margin-top: 0;
-        margin-bottom: 8px;
-        color: #4b1bb3;
-      }
-      .section .date {
-        font-size: 13px;
-        color: #888;
-        margin-bottom: 12px;
-      }
-      .section p {
-        line-height: 1.6;
-        margin: 6px 0;
+      .hero-text h1 {
+        font-size: 36px;
+        line-height: 1.1;
+        margin: 0 0 12px;
+        color: #111827;
       }
 
-      .tag {
-        display: inline-block;
+      .hero-text h1 span {
+        background: linear-gradient(135deg, #ec4899, #6366f1);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .hero-text p {
+        margin: 0 0 16px;
+        color: #4b5563;
+      }
+
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .tag-pill {
         font-size: 11px;
-        padding: 2px 8px;
+        padding: 4px 10px;
         border-radius: 999px;
-        background: #f3ebff;
-        color: #6a21e6;
-        margin-right: 4px;
+        background: rgba(236, 72, 153, 0.09);
+        color: #be185d;
+      }
+
+      .hero-meta {
+        font-size: 12px;
+        color: #9ca3af;
+      }
+
+      .hero-card {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: radial-gradient(circle at top left, #fecaca, #e5e7eb);
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+        padding: 18px 18px 16px;
+      }
+
+      .hero-photo {
+        height: 210px;
+        border-radius: 18px;
+        background-image: url("https://images.pexels.com/photos/3693890/pexels-photo-3693890.jpeg?auto=compress&cs=tinysrgb&w=1200");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-card-footer {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: #374151;
+      }
+
+      .pill-small {
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.85);
+        color: white;
+      }
+
+      .pill-small span {
+        color: #fbbf24;
+      }
+
+      /* SECTIONS */
+      .sections-wrap {
+        max-width: 1080px;
+        margin: 10px auto 40px;
+        padding: 0 20px 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+        gap: 24px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 20px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h2 {
+        margin: 0 0 4px;
+        font-size: 20px;
+        color: #111827;
+      }
+
+      .card-sub {
+        font-size: 12px;
+        color: #9ca3af;
+        margin-bottom: 14px;
+      }
+
+      /* TIMELINE */
+      .timeline {
+        position: relative;
+        margin-top: 10px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, #f97316, #ec4899);
+        opacity: 0.35;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 38px;
+        padding-bottom: 16px;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: white;
+        border: 2px solid #ec4899;
+      }
+
+      .timeline-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111827;
+      }
+
+      .timeline-date {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .timeline-text {
+        font-size: 13px;
+        color: #4b5563;
+      }
+
+      /* GALLERY */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        height: 120px;
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.15);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        right: 8px;
+        font-size: 11px;
+        color: #f9fafb;
+        text-shadow: 0 1px 4px rgba(15, 23, 42, 0.9);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 2px 7px;
+        font-size: 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        margin-bottom: 3px;
+      }
+
+      /* WEDDING SECTION */
+      .wedding {
+        margin-top: 18px;
+        padding: 14px 14px 14px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(59, 130, 246, 0.08));
+        border: 1px dashed rgba(236, 72, 153, 0.5);
+        font-size: 13px;
+        color: #374151;
+      }
+
+      .wedding-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #b91c1c;
       }
 
       footer {
         text-align: center;
-        font-size: 12px;
-        color: #aaa;
-        margin-bottom: 24px;
+        font-size: 11px;
+        color: #9ca3af;
+        padding: 10px 0 18px;
       }
 
-      html {
-        scroll-behavior: smooth;
+      footer span {
+        color: #ec4899;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 840px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .sections-wrap {
+          grid-template-columns: minmax(0, 1fr);
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="logo">Kỉ niệm của chúng mình</div>
-      <nav>
-        <a href="#new-love">Mới quen nhau</a>
-        <a href="#trips">Những chuyến đi chơi</a>
-        <a href="#wedding">Ngày cưới</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <h1>Kỉ niệm của anh với vợ</h1>
-        <p>
-          Lưu lại từng khoảnh khắc nhỏ xíu nhưng rất đáng nhớ của hai đứa mình.
-        </p>
-      </section>
-
-      <section id="new-love" class="section">
-        <h2>Kỉ niệm mới quen nhau</h2>
-        <div class="date">Ngày 04 / 02 / 2020</div>
-        <div>
-          <span class="tag">Lần đầu gặp</span>
-          <span class="tag">Hồi còn rung rinh</span>
+    <div class="page-wrap">
+      <header>
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-icon">♥</div>
+            <div>MY LOVE STORY</div>
+          </div>
+          <nav>
+            <a href="#timeline">Kỉ niệm</a>
+            <a href="#gallery">Hình đẹp</a>
+            <a href="#wedding">Ngày cưới</a>
+          </nav>
         </div>
-        <p>Chỗ này anh sẽ viết lại câu chuyện lần đầu tụi mình gặp nhau.</p>
-        <p>Ví dụ: gặp ở đâu, cảm giác lúc đó thế nào, câu nói đầu tiên là gì...</p>
-      </section>
+      </header>
 
-      <section id="trips" class="section">
-        <h2>Kỉ niệm đi chơi</h2>
-        <div class="date">Nhiều ngày, nhiều nơi ♥</div>
-        <div>
-          <span class="tag">Đi chơi</span>
-          <span class="tag">Chụp hình</span>
-        </div>
-        <p>
-          Ở đây anh có thể liệt kê từng chuyến đi: Đà Lạt, Vũng Tàu, picnic, xem
-          phim, ăn vặt...
-        </p>
-        <p>Mỗi ý nhỏ là một kỉ niệm, sau này muốn thêm hình thì chèn ảnh vào đây.</p>
-      </section>
+      <main>
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-text">
+            <h1>
+              Chuyện tình của
+              <span>Anh &amp; Vợ</span>
+            </h1>
+            <p>
+              Những khoảnh khắc nhỏ xíu nhưng làm mình nhớ cả đời. Mỗi lần kéo xuống
+              là một nụ cười khác nhau.
+            </p>
+            <div class="hero-tags">
+              <div class="tag-pill">Lần đầu gặp</div>
+              <div class="tag-pill">Những chuyến đi xa</div>
+              <div class="tag-pill">Ngày cưới xịn xò</div>
+            </div>
+            <div class="hero-meta">
+              Bắt đầu từ: <strong>...</strong> – Đang viết tiếp mãi mãi ♥
+            </div>
+          </div>
 
-      <section id="wedding" class="section">
-        <h2>Kỉ niệm ngày cưới (xịn xò con bò)</h2>
-        <div class="date">Ngày cưới: 19 / 10 / 2026</div>
-        <div>
-          <span class="tag">Cưới vợ</span>
-          <span class="tag">Ngày đặc biệt</span>
-        </div>
-        <p>Viết lại cảm xúc ngày cưới, ai khóc, ai cười, ai say, ai giành micro.</p>
-        <p>Chỗ này sau này có thể thêm timeline, ảnh cưới, lời chúc của mọi người.</p>
-      </section>
-    </main>
+          <aside class="hero-card">
+            <div class="hero-photo">
+              <!-- Sau này bạn thay URL hình này bằng hình của hai vợ chồng -->
+            </div>
+            <div class="hero-card-footer">
+              <div>Album nhỏ của hai đứa mình</div>
+              <div class="pill-small">
+                Made with <span>♥</span> by chồng
+              </div>
+            </div>
+          </aside>
+        </section>
 
-    <footer>
-      Làm bởi chồng, tặng vợ ♥
-    </footer>
+        <!-- MAIN SECTIONS -->
+        <section class="sections-wrap">
+          <!-- LEFT: TIMELINE -->
+          <article class="card" id="timeline">
+            <h2>Timeline kỉ niệm</h2>
+            <div class="card-sub">
+              Từ lúc mới nói chuyện đến lúc rước nàng về dinh.
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-title">Lần đầu nhắn tin</div>
+                <div class="timeline-date">Ngày ... / ... / ....</div>
+                <div class="timeline-text">
+                  Viết lại câu chuyện lần đầu bắt chuyện, ai inbox trước, câu đầu tiên là gì,
+                  lúc đó trong đầu nghĩ gì về nhau.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-title">Buổi hẹn đầu tiên</div>
+                <div class="timeline-date">Ngày ... / ... / .... – địa điểm ...</div>
+                <div class="timeline-text">
+                  Hai đứa đi đâu, ăn gì, có vụ gì hài, có ai quê, có ai trễ giờ, có ai giả vờ
+                  bình tĩnh nhưng trong lòng run như cầy sấy.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-title">Quyết định yêu nhau chính thức</div>
+                <div class="timeline-date">Ngày ... / ... / ....</div>
+                <div class="timeline-text">
+                  Ghi lại khoảnh khắc tỏ tình, câu trả lời, cảm xúc lúc đó – càng “sến”
+                  càng đúng chất trang này.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-title">Những chuyến đi chơi nhớ đời</div>
+                <div class="timeline-date">Tổng hợp: Đà Lạt, Vũng Tàu, picnic, ...</div>
+                <div class="timeline-text">
+                  Bạn có thể thêm từng bullet nhỏ cho từng chuyến đi, hoặc sau này tách
+                  thành nhiều mục hơn nếu kỉ niệm ngày càng nhiều.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- RIGHT: GALLERY + WEDDING -->
+          <aside class="card">
+            <h2 id="gallery">Góc hình kỉ niệm</h2>
+            <div class="card-sub">
+              Thay hình mẫu bằng hình thật của hai đứa mình.
+            </div>
+
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img
+                  src="https://images.pexels.com/photos/3693890/pexels-photo-3693890.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Kỉ niệm 1"
+                />
+                <div class="gallery-caption">
+                  <div class="badge">Mới quen</div>
+                  <div>Lần đầu đi chơi cùng nhau, cười quên đường về.</div>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="https://images.pexels.com/photos/3693901/pexels-photo-3693901.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Kỉ niệm 2"
+                />
+                <div class="gallery-caption">
+                  <div class="badge">Đi xa</div>
+                  <div>Chuyến đi mà hai đứa hiểu nhau hơn rất nhiều.</div>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Kỉ niệm 3"
+                />
+                <div class="gallery-caption">
+                  <div class="badge">Chụp hình</div>
+                  <div>Bức ảnh vợ cười mà anh mê nhất.</div>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="https://images.pexels.com/photos/1027115/pexels-photo-1027115.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Kỉ niệm 4"
+                />
+                <div class="gallery-caption">
+                  <div class="badge">Khoảnh khắc nhỏ</div>
+                  <div>Không cần cầu kỳ, chỉ cần ở cạnh nhau.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wedding" id="wedding">
+              <div class="wedding-title">Ngày cưới xịn xò con bò</div>
+              <div>
+                Ghi lại cảm xúc ngày cưới: ai run nhất, ai khóc, ai giành micro, bài hát mở
+                màn, khoảnh khắc nhìn nhau trên sân khấu, lời hứa nhỏ của hai đứa.
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer>
+        Làm bởi <span>chồng</span> – dành tặng <span>vợ</span>. Mỗi lần nhớ nhau, mở
+        trang này ra coi là đủ.
+      </footer>
+    </div>
   </body>
 </html>

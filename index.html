@@ -190,13 +190,49 @@
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.98);
+        position: relative;
         border-radius: 18px;
+        overflow: hidden;
+        min-height: 150px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+        color: #f9fafb;
+        transform: translateY(0);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.7);
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.4),
+          rgba(15, 23, 42, 0.82)
+        );
+      }
+
+      .card-inner {
+        position: relative;
+        z-index: 1;
         padding: 14px 14px 16px;
-        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 50px rgba(15, 23, 42, 0.3);
       }
 
       .card-title {
@@ -207,13 +243,13 @@
 
       .card-sub {
         font-size: 11px;
-        color: #9ca3af;
+        color: #e5e7eb;
         margin-bottom: 10px;
       }
 
       .card p {
         font-size: 12px;
-        color: #4b5563;
+        color: #e5e7eb;
         margin: 0 0 12px;
       }
 
@@ -223,9 +259,21 @@
         font-size: 12px;
         padding: 6px 12px;
         border-radius: 999px;
-        background: linear-gradient(135deg, #ec4899, #6366f1);
-        color: white;
-        box-shadow: 0 10px 25px rgba(129, 140, 248, 0.6);
+        background: rgba(248, 250, 252, 0.96);
+        color: #111827;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.45);
+      }
+
+      .card--moi-quen::before {
+        background-image: url("https://images.pexels.com/photos/1449798/pexels-photo-1449798.jpeg?auto=compress&cs=tinysrgb&w=800");
+      }
+
+      .card--di-choi::before {
+        background-image: url("https://images.pexels.com/photos/3693901/pexels-photo-3693901.jpeg?auto=compress&cs=tinysrgb&w=800");
+      }
+
+      .card--ngay-cuoi::before {
+        background-image: url("https://images.pexels.com/photos/3951769/pexels-photo-3951769.jpeg?auto=compress&cs=tinysrgb&w=800");
       }
 
       /* PREVIEW TIMELINE BÊN PHẢI */
@@ -351,40 +399,46 @@
         <!-- HÀNG 3 CHƯƠNG + PREVIEW TIMELINE NHỎ -->
         <section class="sections-row">
           <div class="cards">
-            <article class="card">
-              <div>
-                <div class="card-title">Mới quen nhau</div>
-                <div class="card-sub">Những tin nhắn và buổi gặp đầu tiên.</div>
-                <p>
-                  Nơi ghi lại cảm xúc lúc mới nói chuyện, buổi hẹn đầu và ấn
-                  tượng ban đầu về nhau.
-                </p>
+            <article class="card card--moi-quen">
+              <div class="card-inner">
+                <div>
+                  <div class="card-title">Mới quen nhau</div>
+                  <div class="card-sub">Những tin nhắn và buổi gặp đầu tiên.</div>
+                  <p>
+                    Nơi ghi lại cảm xúc lúc mới nói chuyện, buổi hẹn đầu và ấn
+                    tượng ban đầu về nhau.
+                  </p>
+                </div>
+                <a href="moi-quen.html">Vào xem chương này</a>
               </div>
-              <a href="moi-quen.html">Vào xem chương này</a>
             </article>
 
-            <article class="card">
-              <div>
-                <div class="card-title">Những chuyến đi chơi</div>
-                <div class="card-sub">Đà Lạt, Vũng Tàu, picnic, ăn vặt...</div>
-                <p>
-                  Mỗi chuyến đi là một câu chuyện nhỏ: chụp hình, cãi nhau xíu,
-                  làm hoà, có lúc mệt nhưng rất vui.
-                </p>
+            <article class="card card--di-choi">
+              <div class="card-inner">
+                <div>
+                  <div class="card-title">Những chuyến đi chơi</div>
+                  <div class="card-sub">Đà Lạt, Vũng Tàu, picnic, ăn vặt...</div>
+                  <p>
+                    Mỗi chuyến đi là một câu chuyện nhỏ: chụp hình, cãi nhau xíu,
+                    làm hoà, có lúc mệt nhưng rất vui.
+                  </p>
+                </div>
+                <a href="di-choi.html">Vào xem chương này</a>
               </div>
-              <a href="di-choi.html">Vào xem chương này</a>
             </article>
 
-            <article class="card">
-              <div>
-                <div class="card-title">Ngày cưới xịn xò</div>
-                <div class="card-sub">Ngày chính thức rước nàng về dinh.</div>
-                <p>
-                  Ghi lại timeline ngày cưới, khoảnh khắc trên sân khấu, lời
-                  hứa và những tấm hình đặc biệt.
-                </p>
+            <article class="card card--ngay-cuoi">
+              <div class="card-inner">
+                <div>
+                  <div class="card-title">Ngày cưới xịn xò</div>
+                  <div class="card-sub">Ngày chính thức rước nàng về dinh.</div>
+                  <p>
+                    Ghi lại timeline ngày cưới, khoảnh khắc trên sân khấu, lời
+                    hứa và những tấm hình đặc biệt.
+                  </p>
+                </div>
+                <a href="ngay-cuoi.html">Vào xem chương này</a>
               </div>
-              <a href="ngay-cuoi.html">Vào xem chương này</a>
             </article>
           </div>
 

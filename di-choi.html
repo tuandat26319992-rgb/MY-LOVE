@@ -92,8 +92,14 @@
       }
 
       .title-block h1 {
-        font-size: 30px;
-        margin-bottom: 6px;
+        font-size: 36px;
+        margin-bottom: 4px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: linear-gradient(120deg, #ec4899, #6366f1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
 
       .title-block p {
@@ -101,11 +107,68 @@
         color: #4b5563;
       }
 
+      .title-block .subtitle {
+        margin-top: 4px;
+        font-size: 13px;
+        color: #9ca3af;
+      }
+
       .trips-grid {
         margin-top: 24px;
         display: grid;
         grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
         gap: 24px;
+      }
+
+      .trip-sections {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .trip-section {
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 20px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+      }
+
+      .trip-section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .trip-section-title {
+        font-size: 20px;
+        font-weight: 650;
+        color: #111827;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .trip-section-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(59, 130, 246, 0.08);
+        color: #2563eb;
+      }
+
+      .trip-section-text {
+        font-size: 13px;
+        color: #4b5563;
+        margin-bottom: 10px;
+        line-height: 1.7;
+      }
+
+      .trip-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
       }
 
       .card {
@@ -118,6 +181,9 @@
       .card h2 {
         margin: 0 0 6px;
         font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #0f172a;
       }
 
       .card-sub {
@@ -135,6 +201,7 @@
       .trip-title {
         font-size: 14px;
         font-weight: 600;
+        color: #1d4ed8;
       }
 
       .trip-date {
@@ -151,16 +218,16 @@
       .photo-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 12px;
         margin-top: 8px;
       }
 
       .photo {
         position: relative;
-        border-radius: 14px;
+        border-radius: 16px;
         overflow: hidden;
-        height: 120px;
-        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.15);
+        height: 160px;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
       }
 
       .photo img {
@@ -168,6 +235,12 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: transform 0.25s ease-out;
+        cursor: pointer;
+      }
+
+      .photo:hover img {
+        transform: scale(1.05);
       }
 
       .photo span {
@@ -179,6 +252,106 @@
         border-radius: 999px;
         background: rgba(15, 23, 42, 0.9);
         color: #f9fafb;
+      }
+
+      .album-note {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 8px;
+      }
+
+      .lightbox-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.85);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 40;
+      }
+
+      .lightbox-backdrop.open {
+        display: flex;
+      }
+
+      .lightbox {
+        max-width: min(960px, 96vw);
+        max-height: 90vh;
+        background: #020617;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .lightbox-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 14px;
+        color: #e5e7eb;
+        font-size: 12px;
+        background: linear-gradient(to right, #020617, #111827);
+      }
+
+      .lightbox-body {
+        position: relative;
+        background: #020617;
+      }
+
+      .lightbox-body img {
+        max-width: 100%;
+        max-height: 70vh;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        background: #020617;
+      }
+
+      .lightbox-caption {
+        padding: 10px 14px 12px;
+        color: #9ca3af;
+        font-size: 12px;
+        border-top: 1px solid #1f2933;
+      }
+
+      .lightbox-close {
+        border: none;
+        background: rgba(15, 23, 42, 0.8);
+        color: #e5e7eb;
+        border-radius: 999px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .lightbox-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: rgba(15, 23, 42, 0.7);
+        color: #e5e7eb;
+        border-radius: 999px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .lightbox-arrow.prev {
+        left: 10px;
+      }
+
+      .lightbox-arrow.next {
+        right: 10px;
       }
 
       footer {
@@ -219,76 +392,988 @@
         <section class="title-block">
           <h1>Những chuyến đi chơi</h1>
           <p>Mỗi nơi hai đứa ghé qua là một kỉ niệm riêng.</p>
+          <p class="subtitle">
+            Cuộn xuống từ từ để đi lại một vòng những chuyến đi của hai đứa – từ
+            những ngày còn sinh viên cho tới lúc trưởng thành hơn.
+          </p>
         </section>
 
         <section class="trips-grid">
           <article class="card">
             <h2>Danh sách chuyến đi</h2>
-            <div class="card-sub">Tự điền lại theo từng lần đi chơi.</div>
+            <div class="card-sub">
+              Ghi nhanh vài dòng cho từng chuyến để sau này đọc lại còn nhớ
+              mình đã đi qua những đâu cùng nhau.
+            </div>
 
             <div class="trip">
-              <div class="trip-title">Đà Lạt lần đầu</div>
+              <div class="trip-title">Cần Thơ – miền Tây đầu tiên</div>
               <div class="trip-date">Ngày ... / ... / ....</div>
               <div class="trip-text">
-                Ghi lại cảm giác lúc hai đứa đi xe, trời lạnh, chụp hình, ăn gì,
-                có lạc đường hay giận hờn gì vui vui.
+                Chợ nổi buổi sáng, bến Ninh Kiều và cảm giác ngồi trên thuyền
+                cạnh nhau giữa sông. Viết lại mấy câu chuyện nhỏ, mấy câu nói
+                ngớ ngẩn nhưng làm hai đứa cười suốt chuyến đi.
               </div>
             </div>
 
             <div class="trip">
-              <div class="trip-title">Vũng Tàu / biển</div>
+              <div class="trip-title">Đà Nẵng – thành phố biển</div>
               <div class="trip-date">Ngày ... / ... / ....</div>
               <div class="trip-text">
-                Lần đi biển, tắm biển, ngắm hoàng hôn, ăn hải sản, ai là người
-                chụp choẹt “có tâm” hơn.
+                Cầu Rồng, biển đêm, tiếng sóng và đồ ăn vặt trên vỉa hè. Ghi lại
+                lần đầu hai đứa đến Đà Nẵng, chỗ ở, quán ăn ngon nhất và khoảnh
+                khắc khiến mày thấy “ừ, đi chung vậy mới vui”.
               </div>
             </div>
 
             <div class="trip">
-              <div class="trip-title">Picnic / dã ngoại</div>
+              <div class="trip-title">Đi xa – những chuyến bay</div>
               <div class="trip-date">Ngày ... / ... / ....</div>
               <div class="trip-text">
-                Trải bạt, ăn vặt, nói chuyện trên trời dưới đất, có khoảnh khắc
-                nào làm bạn nhớ hoài thì ghi lại đây.
+                Mỗi lần máy bay cất cánh là một lần hai đứa có thêm kỉ niệm
+                chung ở một nơi mới. Viết thêm vài dòng về thành phố, thời tiết
+                hôm đó và điều đặc biệt nhất của chuyến đi.
+              </div>
+            </div>
+
+            <div class="trip">
+              <div class="trip-title">Làng đại học – thời sinh viên</div>
+              <div class="trip-date">Ngày ... / ... / ....</div>
+              <div class="trip-text">
+                Những con đường chở nhau đi học, chỗ hay ngồi tám chuyện, quán
+                ăn quen thuộc. Ghi lại một chiều hoặc một buổi tối mà mày cảm
+                thấy “may là lúc đó có người này bên cạnh”.
+              </div>
+            </div>
+
+            <div class="trip">
+              <div class="trip-title">Tết – chợ hoa & ra mắt</div>
+              <div class="trip-date">Ngày ... / ... / ....</div>
+              <div class="trip-text">
+                Lần đầu dắt nhau đi chợ hoa, lần đầu dẫn nhau về nhà ăn Tết,
+                những tấm hình chụp vội nhưng quý hơn cả. Viết vài dòng về cảm
+                giác hồi hộp, buổi gặp gỡ gia đình hai bên, hoặc một câu chúc
+                Tết riêng cho người kia.
+              </div>
+            </div>
+
+            <div class="trip">
+              <div class="trip-title">Nam Cát Tiên – rừng & dã ngoại</div>
+              <div class="trip-date">Ngày ... / ... / ....</div>
+              <div class="trip-text">
+                Đổi khói bụi thành tiếng chim và mùi cây rừng, cả đám lấm lem
+                nhưng ai cũng cười tươi. Ghi lại đoạn đường mệt nhất, khoảnh
+                khắc đẹp nhất và lời hứa nhỏ nào đó hai đứa nói với nhau.
+              </div>
+            </div>
+
+            <div class="trip">
+              <div class="trip-title">Tốt nghiệp – cột mốc chung</div>
+              <div class="trip-date">Ngày ... / ... / ....</div>
+              <div class="trip-text">
+                Áo cử nhân, bó hoa, người thân và người thương đứng cạnh. Viết
+                thêm đôi dòng về cảm xúc ngày hôm đó, ước mơ sau khi ra trường
+                và lời hứa sẽ đi cùng nhau thêm bao nhiêu cột mốc nữa.
+              </div>
+            </div>
+
+            <div class="trip">
+              <div class="trip-title">Trung thu & Noel – mùa đèn sáng</div>
+              <div class="trip-date">Ngày ... / ... / ....</div>
+              <div class="trip-text">
+                Đèn lồng, cây thông, người tuyết và mấy tấm hình check-in dễ
+                thương. Ghi lại món quà nhỏ, câu chúc, hoặc điều ước hai đứa đã
+                nói với nhau trong những mùa lễ hội này.
+              </div>
+            </div>
+
+            <div class="trip">
+              <div class="trip-title">Vũng Tàu – nơi trốn Sài Gòn</div>
+              <div class="trip-date">Ngày ... / ... / ....</div>
+              <div class="trip-text">
+                Những lần rủ nhau ra biển chỉ để hít gió, ăn hải sản và ngồi nhìn
+                mặt trời lặn. Viết thêm vài câu về chuyến đi Vũng Tàu làm mày
+                nhớ nhất, và cảm giác khi quay lại Sài Gòn sau những ngày “trốn”.
               </div>
             </div>
           </article>
 
           <aside class="card">
             <h2>Album đi chơi</h2>
-            <div class="card-sub">Thay ảnh mẫu bằng ảnh thật.</div>
+            <div class="card-sub">
+              Mỗi ô là 1 chuyến đi. Hình đại diện lấy từ tấm đầu tiên trong từng
+              thư mục của bạn.
+            </div>
 
             <div class="photo-grid">
               <div class="photo">
                 <img
-                  src="https://images.pexels.com/photos/1449798/pexels-photo-1449798.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Chuyến đi 1"
+                  src="image/trip/can-tho/Can-tho-1.JPG"
+                  alt="Cần Thơ"
+                  data-full="image/trip/can-tho/Can-tho-1.JPG"
+                  data-caption="Những ngày ở Cần Thơ – bến Ninh Kiều, chợ nổi, góc bình yên của hai đứa."
                 />
-                <span>Đà Lạt</span>
+                <span>Cần Thơ</span>
               </div>
               <div class="photo">
                 <img
-                  src="https://images.pexels.com/photos/1027115/pexels-photo-1027115.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Chuyến đi 2"
+                  src="image/trip/da-nang/da-nang-1.jpg"
+                  alt="Đà Nẵng"
+                  data-full="image/trip/da-nang/da-nang-1.jpg"
+                  data-caption="Đà Nẵng – biển, cầu Rồng, những buổi tối dạo phố cùng nhau."
                 />
-                <span>Biển</span>
+                <span>Đà Nẵng</span>
               </div>
               <div class="photo">
                 <img
-                  src="https://images.pexels.com/photos/3693901/pexels-photo-3693901.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Chuyến đi 3"
+                  src="image/trip/di-xa/di-xa-1.jpg"
+                  alt="Những chuyến đi xa"
+                  data-full="image/trip/di-xa/di-xa-1.jpg"
+                  data-caption="Những chuyến đi xa – mệt nhưng vui vì có nhau."
                 />
-                <span>Picnic</span>
+                <span>Đi xa</span>
               </div>
               <div class="photo">
                 <img
-                  src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Chuyến đi 4"
+                  src="image/trip/lang-dai-hoc/lang-dh-1.jpg"
+                  alt="Làng đại học"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-1.jpg"
+                  data-caption="Làng đại học – một đoạn tuổi trẻ, chở nhau qua từng mùa thi."
                 />
-                <span>Khoảnh khắc khác</span>
+                <span>Làng đại học</span>
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-1.jpg"
+                  alt="Tết"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-1.jpg"
+                  data-caption="Những ngày Tết – chợ hoa, lì xì, lần đầu về thăm nhà nhau."
+                />
+                <span>Tết</span>
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-1.jpg"
+                  alt="Nam Cát Tiên"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-1.jpg"
+                  data-caption="Nam Cát Tiên – rừng, suối và những tấm hình 'dã ngoại' của hai đứa."
+                />
+                <span>Nam Cát Tiên</span>
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-1.jpg"
+                  alt="Tốt nghiệp"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-1.jpg"
+                  data-caption="Ngày tốt nghiệp – áo cử nhân, bó hoa, cái ôm sau cùng thời sinh viên."
+                />
+                <span>Tốt nghiệp</span>
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-1.jpg"
+                  alt="Trung thu & Noel"
+                  data-full="image/trip/trung-thu&noel/trung-thu-1.jpg"
+                  data-caption="Trung thu & Noel – đèn lồng, cây thông, ảnh check-in dễ thương của hai đứa."
+                />
+                <span>Trung thu & Noel</span>
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-1.jpg"
+                  alt="Vũng Tàu"
+                  data-full="image/trip/vung-tau/vung-tau-1.jpg"
+                  data-caption="Vũng Tàu – biển, hải sản, những lần trốn khỏi Sài Gòn cùng nhau."
+                />
+                <span>Vũng Tàu</span>
               </div>
             </div>
+            <p class="album-note">
+              Chỉ cần giữ nguyên tên file như trong các thư mục
+              <code>can-tho</code>, <code>da-nang</code>, <code>di-xa</code>,
+              <code>lang-dai-hoc</code>, <code>lunar-new-year</code>,
+              <code>nam-cat-tien</code>, <code>tot-nghiep</code>,
+              <code>trung-thu&amp;noel</code>, <code>vung-tau</code>. Mọi thứ còn
+              lại trang sẽ tự hiển thị.
+            </p>
           </aside>
+        </section>
+
+        <section class="trip-sections">
+          <article class="trip-section" id="can-tho">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Cần Thơ</div>
+              <div class="trip-section-tag">Miền Tây</div>
+            </div>
+            <p class="trip-section-text">
+              Những ngày ở Cần Thơ bắt đầu bằng chuyến đi thuyền từ tờ mờ sáng,
+              tay lạnh nhưng tim thì ấm vì có người ngồi cạnh. Bến Ninh Kiều,
+              chợ nổi, mấy con hẻm nhỏ và tiếng cười của hai đứa gom lại thành
+              một đoạn miền Tây rất riêng.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-1.JPG"
+                  alt="Cần Thơ 1"
+                  data-full="image/trip/can-tho/Can-tho-1.JPG"
+                  data-caption="Những hạt nhỏ và đôi tay – mở đầu cho hành trình ở Cần Thơ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-2.JPG"
+                  alt="Cần Thơ 2"
+                  data-full="image/trip/can-tho/Can-tho-2.JPG"
+                  data-caption="Cổng đèn lung linh buổi tối."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-3.JPG"
+                  alt="Cần Thơ 3"
+                  data-full="image/trip/can-tho/Can-tho-3.JPG"
+                  data-caption="Hai đứa chụp chung, cười tươi giữa chuyến đi."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-4.JPG"
+                  alt="Cần Thơ 4"
+                  data-full="image/trip/can-tho/Can-tho-4.JPG"
+                  data-caption="Góc sông nước, gió mát và nụ cười hiền."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-5.JPG"
+                  alt="Cần Thơ 5"
+                  data-full="image/trip/can-tho/Can-tho-5.JPG"
+                  data-caption="Cả nhóm cùng nhau, không khí vui nhộn."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-6.JPG"
+                  alt="Cần Thơ 6"
+                  data-full="image/trip/can-tho/Can-tho-6.JPG"
+                  data-caption="Trên thuyền, áo phao, tiếng cười và câu chuyện trên sông."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/can-tho/Can-tho-7.JPG"
+                  alt="Cần Thơ 7"
+                  data-full="image/trip/can-tho/Can-tho-7.JPG"
+                  data-caption="Hai đứa tựa sát bên nhau – tấm hình chốt lại chuyến đi."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="da-nang">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Đà Nẵng</div>
+              <div class="trip-section-tag">Biển & thành phố</div>
+            </div>
+            <p class="trip-section-text">
+              Đà Nẵng là thành phố mà chỉ cần nhắc tên thôi là nhớ ngay cảm giác
+              gió biển thổi vào mặt và mùi đồ ăn vặt tấp nập buổi tối. Hai đứa
+              đi qua cầu Rồng, qua những con đường sáng đèn, mệt thì ngồi xuống
+              lề đường ăn cho no bụng rồi lại dắt nhau đi tiếp.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-1.jpg"
+                  alt="Đà Nẵng 1"
+                  data-full="image/trip/da-nang/da-nang-1.jpg"
+                  data-caption="Khoảnh khắc đầu tiên ở Đà Nẵng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-2.jpg"
+                  alt="Đà Nẵng 2"
+                  data-full="image/trip/da-nang/da-nang-2.jpg"
+                  data-caption="Hai đứa trên xe, chuẩn bị cho hành trình."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-3.jpg"
+                  alt="Đà Nẵng 3"
+                  data-full="image/trip/da-nang/da-nang-3.jpg"
+                  data-caption="Cả nhóm chụp chung, không khí vui nhộn."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-4.jpg"
+                  alt="Đà Nẵng 4"
+                  data-full="image/trip/da-nang/da-nang-4.jpg"
+                  data-caption="Check-in giữa khuôn viên xanh mát."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-5.jpg"
+                  alt="Đà Nẵng 5"
+                  data-full="image/trip/da-nang/da-nang-5.jpg"
+                  data-caption="Khung cảnh hồ nước và đài phun đẹp mắt."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-6.jpg"
+                  alt="Đà Nẵng 6"
+                  data-full="image/trip/da-nang/da-nang-6.jpg"
+                  data-caption="Cả nhóm tạo dáng bên nhau."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-7.jpg"
+                  alt="Đà Nẵng 7"
+                  data-full="image/trip/da-nang/da-nang-7.jpg"
+                  data-caption="Một góc phố hoặc lan can nhìn ra xa."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-8.jpg"
+                  alt="Đà Nẵng 8"
+                  data-full="image/trip/da-nang/da-nang-8.jpg"
+                  data-caption="Hai đứa trên đồi hoặc gần biển, phía sau là hoàng hôn."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-9.jpg"
+                  alt="Đà Nẵng 9"
+                  data-full="image/trip/da-nang/da-nang-9.jpg"
+                  data-caption="Một khoảnh khắc cận mặt dễ thương."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-10.jpg"
+                  alt="Đà Nẵng 10"
+                  data-full="image/trip/da-nang/da-nang-10.jpg"
+                  data-caption="Check-in trước tòa nhà hoặc quảng trường."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-11.jpg"
+                  alt="Đà Nẵng 11"
+                  data-full="image/trip/da-nang/da-nang-11.jpg"
+                  data-caption="Hai đứa tạo dáng trước công trình nổi bật."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-12.jpg"
+                  alt="Đà Nẵng 12"
+                  data-full="image/trip/da-nang/da-nang-12.jpg"
+                  data-caption="Khoảnh khắc trên xe, mệt nhưng vui."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/da-nang/da-nang-13.jpg"
+                  alt="Đà Nẵng 13"
+                  data-full="image/trip/da-nang/da-nang-13.jpg"
+                  data-caption="Tấm hình kết lại chuyến Đà Nẵng."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="di-xa">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Những chuyến đi xa</div>
+              <div class="trip-section-tag">Đường dài</div>
+            </div>
+            <p class="trip-section-text">
+              Có những chuyến đi xa không nhớ rõ mình đã ghé bao nhiêu nơi, chỉ
+              nhớ cảm giác ngồi cạnh nhau trên xe, nhìn thành phố lùi dần phía
+              sau. Mỗi lần máy bay cất cánh hay xe lăn bánh, hai đứa lại có thêm
+              một câu chuyện mới để sau này ngồi nhắc lại.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-1.jpg"
+                  alt="Đi xa 1"
+                  data-full="image/trip/di-xa/di-xa-1.jpg"
+                  data-caption="Máy bay, đường băng – mở đầu chuyến đi xa."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-2.jpg"
+                  alt="Đi xa 2"
+                  data-full="image/trip/di-xa/di-xa-2.jpg"
+                  data-caption="Trên đường đi, không khí lạnh nhưng lòng thì háo hức."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-3.jpg"
+                  alt="Đi xa 3"
+                  data-full="image/trip/di-xa/di-xa-3.jpg"
+                  data-caption="Cả nhóm đứng giữa phố với ánh đèn rực rỡ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-4.jpg"
+                  alt="Đi xa 4"
+                  data-full="image/trip/di-xa/di-xa-4.jpg"
+                  data-caption="Một góc thành phố lung linh về đêm."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-5.jpg"
+                  alt="Đi xa 5"
+                  data-full="image/trip/di-xa/di-xa-5.jpg"
+                  data-caption="Những tòa nhà sáng đèn, cảm giác như trong phim."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-6.jpg"
+                  alt="Đi xa 6"
+                  data-full="image/trip/di-xa/di-xa-6.jpg"
+                  data-caption="Hai đứa giữa phố, phía sau là biển người và ánh sáng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-7.jpg"
+                  alt="Đi xa 7"
+                  data-full="image/trip/di-xa/di-xa-7.jpg"
+                  data-caption="Khoảnh khắc đi trong mưa hoặc trên đường ướt."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-8.jpg"
+                  alt="Đi xa 8"
+                  data-full="image/trip/di-xa/di-xa-8.jpg"
+                  data-caption="Cả nhóm trong quán, ngồi cạnh nhau kể chuyện."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/di-xa/di-xa-9.jpg"
+                  alt="Đi xa 9"
+                  data-full="image/trip/di-xa/di-xa-9.jpg"
+                  data-caption="Tấm hình cuối đánh dấu một chuyến đi xa đáng nhớ."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="lang-dai-hoc">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Làng đại học</div>
+              <div class="trip-section-tag">Tuổi sinh viên</div>
+            </div>
+            <p class="trip-section-text">
+              Làng đại học là đoạn thanh xuân mà hai đứa đi qua cùng nhau: những
+              con đường chở nhau đi học, quán ăn quen thuộc, ly trà sữa uống
+              hoài không ngán. Kết thúc một ngày mệt, chỉ cần chạy xe vòng vòng
+              nói vài câu linh tinh cũng thấy đỡ hơn rất nhiều.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-1.jpg"
+                  alt="Làng đại học 1"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-1.jpg"
+                  data-caption="Buổi tối ở làng đại học, đèn đường và cỏ xanh."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-2.jpg"
+                  alt="Làng đại học 2"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-2.jpg"
+                  data-caption="Dưới ánh đèn vàng, khung cảnh rất yên."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-3.jpg"
+                  alt="Làng đại học 3"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-3.jpg"
+                  data-caption="Nụ cười quen thuộc giữa những ngày sinh viên."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-4.jpg"
+                  alt="Làng đại học 4"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-4.jpg"
+                  data-caption="Trước tòa nhà hoặc giảng đường – một cột mốc nhỏ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-5.jpg"
+                  alt="Làng đại học 5"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-5.jpg"
+                  data-caption="Con đường dài, phía xa là bầu trời rộng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-6.jpg"
+                  alt="Làng đại học 6"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-6.jpg"
+                  data-caption="Dáng đứng quen thuộc giữa con đường vắng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-7.jpg"
+                  alt="Làng đại học 7"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-7.jpg"
+                  data-caption="Nụ cười nhìn về phía máy ảnh."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-8.jpg"
+                  alt="Làng đại học 8"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-8.jpg"
+                  data-caption="Khung cảnh xanh mát, gió thổi nhẹ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-9.jpg"
+                  alt="Làng đại học 9"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-9.jpg"
+                  data-caption="Tấm hình chụp toàn thân trên cầu hoặc bậc thềm."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lang-dai-hoc/lang-dh-10.jpg"
+                  alt="Làng đại học 10"
+                  data-full="image/trip/lang-dai-hoc/lang-dh-10.jpg"
+                  data-caption="Một góc khác của làng đại học, đầy trời mây."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="lunar-new-year">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Tết</div>
+              <div class="trip-section-tag">Lunar New Year</div>
+            </div>
+            <p class="trip-section-text">
+              Tết của hai đứa không chỉ là chợ hoa, lì xì và mùi đồ ăn thơm lừng
+              khắp nhà, mà còn là lần đầu dẫn nhau về ra mắt, hồi hộp muốn xỉu
+              nhưng vẫn cố cười thiệt tươi. Những tấm hình chụp vội giữa dòng
+              người đông đúc sau này nhìn lại vẫn thấy ấm.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-1.jpg"
+                  alt="Tết 1"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-1.jpg"
+                  data-caption="Cận cảnh một góc Tết rực rỡ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-2.jpg"
+                  alt="Tết 2"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-2.jpg"
+                  data-caption="Hai đứa chụp chung giữa không khí xuân."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-3.jpg"
+                  alt="Tết 3"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-3.jpg"
+                  data-caption="Chợ hoa, cây cối và sắc màu Tết."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-4.jpg"
+                  alt="Tết 4"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-4.jpg"
+                  data-caption="Góc chụp với tượng hoặc trang trí dễ thương."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-5.jpg"
+                  alt="Tết 5"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-5.jpg"
+                  data-caption="Những bông hoa hướng dương rực rỡ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-6.jpg"
+                  alt="Tết 6"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-6.jpg"
+                  data-caption="Gói bánh, mâm Tết hoặc không khí gia đình."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-7.jpg"
+                  alt="Tết 7"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-7.jpg"
+                  data-caption="Một khoảnh khắc đáng nhớ trong những ngày Tết."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/lunar-new-year/lunar-new-year-8.jpg"
+                  alt="Tết 8"
+                  data-full="image/trip/lunar-new-year/lunar-new-year-8.jpg"
+                  data-caption="Tấm hình kết lại loạt kỉ niệm Tết."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="nam-cat-tien">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Nam Cát Tiên</div>
+              <div class="trip-section-tag">Rừng & dã ngoại</div>
+            </div>
+            <p class="trip-section-text">
+              Nam Cát Tiên là chuyến đi mà hai đứa tạm rời khỏi thành phố, đổi
+              tiếng còi xe bằng tiếng chim, đổi khói bụi bằng mùi rừng và gió
+              mát. Mồ hôi, vết bẩn trên giày và cả đống hình “dã ngoại” chính là
+              những thứ làm chuyến đi này trở nên đáng nhớ.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-1.jpg"
+                  alt="Nam Cát Tiên 1"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-1.jpg"
+                  data-caption="Gốc cây lớn và cả nhóm bên dưới – cảm giác nhỏ bé giữa thiên nhiên."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-2.jpg"
+                  alt="Nam Cát Tiên 2"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-2.jpg"
+                  data-caption="Dòng suối, đá và bầu trời xanh."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-3.jpg"
+                  alt="Nam Cát Tiên 3"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-3.jpg"
+                  data-caption="Chụp gần hơn, thấy rõ hai đứa giữa khung cảnh rừng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-4.jpg"
+                  alt="Nam Cát Tiên 4"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-4.jpg"
+                  data-caption="Thân cây cao vút, cảm giác hoang sơ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-5.jpg"
+                  alt="Nam Cát Tiên 5"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-5.jpg"
+                  data-caption="Biển tên hoặc cổng chào Nam Cát Tiên."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-6.jpg"
+                  alt="Nam Cát Tiên 6"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-6.jpg"
+                  data-caption="Khu cắm trại hoặc khu vui chơi đầy màu sắc."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/nam-cat-tien/nam-cat-tien-7.jpg"
+                  alt="Nam Cát Tiên 7"
+                  data-full="image/trip/nam-cat-tien/nam-cat-tien-7.jpg"
+                  data-caption="Toàn cảnh khu vui chơi hoặc khu nhà nghỉ."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="tot-nghiep">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Tốt nghiệp</div>
+              <div class="trip-section-tag">Cột mốc</div>
+            </div>
+            <p class="trip-section-text">
+              Ngày tốt nghiệp là cột mốc mà hai đứa chính thức bước ra khỏi thời
+              sinh viên: áo cử nhân, bó hoa trên tay, người thân đứng đợi bên
+              dưới. Giữa đám đông mặc áo choàng giống nhau, hai đứa vẫn nhìn ra
+              nhau và cười như ngày đầu mới quen.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-1.jpg"
+                  alt="Tốt nghiệp 1"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-1.jpg"
+                  data-caption="Backdrop tốt nghiệp, mở đầu một ngày quan trọng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-2.jpg"
+                  alt="Tốt nghiệp 2"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-2.jpg"
+                  data-caption="Chụp cùng người thân trong khuôn viên trường."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-3.jpg"
+                  alt="Tốt nghiệp 3"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-3.jpg"
+                  data-caption="Khoảnh khắc ôm nhau giữa bãi cỏ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-4.jpg"
+                  alt="Tốt nghiệp 4"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-4.jpg"
+                  data-caption="Cả hai ngồi trên bãi cỏ, thoải mái sau buổi lễ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-5.jpg"
+                  alt="Tốt nghiệp 5"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-5.jpg"
+                  data-caption="Cận cảnh gương mặt rạng rỡ ngày tốt nghiệp."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-6.jpg"
+                  alt="Tốt nghiệp 6"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-6.jpg"
+                  data-caption="Khoảnh khắc trong áo cử nhân, đầy tự hào."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-7.jpg"
+                  alt="Tốt nghiệp 7"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-7.jpg"
+                  data-caption="Chụp chung cùng người thân và người thương."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-8.jpg"
+                  alt="Tốt nghiệp 8"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-8.jpg"
+                  data-caption="Khoảnh khắc trên sân trường, trời nắng đẹp."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-9.jpg"
+                  alt="Tốt nghiệp 9"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-9.jpg"
+                  data-caption="Tấm hình gần cuối, ôm trọn cảm xúc ngày tốt nghiệp."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/tot-nghiep/tot-nghiep-10.jpg"
+                  alt="Tốt nghiệp 10"
+                  data-full="image/trip/tot-nghiep/tot-nghiep-10.jpg"
+                  data-caption="Tấm hình chốt lại một chương tuổi trẻ."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="trung-thu-noel">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Trung thu & Noel</div>
+              <div class="trip-section-tag">Lễ hội</div>
+            </div>
+            <p class="trip-section-text">
+              Trung thu và Noel là hai mùa lễ hội mà hai đứa luôn cố gắng đi
+              cùng nhau, dù bận đến mấy cũng tranh thủ một buổi tối để chụp vài
+              tấm hình “sống ảo”. Đèn lồng, cây thông, người tuyết và cả tiếng
+              nhạc xung quanh đều trở thành phông nền cho nụ cười của hai đứa.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-1.jpg"
+                  alt="Trung thu & Noel 1"
+                  data-full="image/trip/trung-thu&noel/trung-thu-1.jpg"
+                  data-caption="Khu siêu thị hoặc hành lang đầy đồ trang trí."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-2.jpg"
+                  alt="Trung thu & Noel 2"
+                  data-full="image/trip/trung-thu&noel/trung-thu-2.jpg"
+                  data-caption="Cổng trang trí Trung thu hoặc Noel rực rỡ."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-3.jpg"
+                  alt="Trung thu & Noel 3"
+                  data-full="image/trip/trung-thu&noel/trung-thu-3.jpg"
+                  data-caption="Hai đứa chụp chung với đèn lồng/ánh sáng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-4.jpg"
+                  alt="Trung thu & Noel 4"
+                  data-full="image/trip/trung-thu&noel/trung-thu-4.jpg"
+                  data-caption="Đài phun nước hoặc khu trang trí ngoài trời."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-5.jpg"
+                  alt="Trung thu & Noel 5"
+                  data-full="image/trip/trung-thu&noel/trung-thu-5.jpg"
+                  data-caption="Ảnh selfie hai đứa giữa dòng người lễ hội."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-6.jpg"
+                  alt="Trung thu & Noel 6"
+                  data-full="image/trip/trung-thu&noel/trung-thu-6.jpg"
+                  data-caption="Người tuyết hoặc tượng trang trí Noel đáng yêu."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/trung-thu&noel/trung-thu-7.jpg"
+                  alt="Trung thu & Noel 7"
+                  data-full="image/trip/trung-thu&noel/trung-thu-7.jpg"
+                  data-caption="Tấm hình chốt lại mùa lễ hội – hai đứa cười thật tươi."
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="trip-section" id="vung-tau">
+            <div class="trip-section-header">
+              <div class="trip-section-title">Vũng Tàu</div>
+              <div class="trip-section-tag">Biển</div>
+            </div>
+            <p class="trip-section-text">
+              Vũng Tàu là điểm trốn Sài Gòn quen thuộc của hai đứa: chỉ cần
+              thấy mệt là lại rủ nhau ra biển ngắm hoàng hôn, ăn hải sản và đi
+              dạo trên cát. Những tấm hình váy hồng, bậc thang và chú nấm màu
+              sắc là minh chứng cho mấy lần “lên đồ” đi biển cùng nhau.
+            </p>
+            <div class="trip-gallery">
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-1.jpg"
+                  alt="Vũng Tàu 1"
+                  data-full="image/trip/vung-tau/vung-tau-1.jpg"
+                  data-caption="Biển về chiều, bóng người nhỏ giữa khung trời rộng."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-2.jpg"
+                  alt="Vũng Tàu 2"
+                  data-full="image/trip/vung-tau/vung-tau-2.jpg"
+                  data-caption="Dáng đứng trên bờ biển, phía sau là hoàng hôn."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-3.jpg"
+                  alt="Vũng Tàu 3"
+                  data-full="image/trip/vung-tau/vung-tau-3.jpg"
+                  data-caption="Chiếc váy hồng và cát biển."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-4.jpg"
+                  alt="Vũng Tàu 4"
+                  data-full="image/trip/vung-tau/vung-tau-4.jpg"
+                  data-caption="Hai đứa nắm tay hoặc đứng cạnh nhau trước biển."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-5.jpg"
+                  alt="Vũng Tàu 5"
+                  data-full="image/trip/vung-tau/vung-tau-5.jpg"
+                  data-caption="Những tảng đá chắn sóng đặc trưng Vũng Tàu."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-6.jpg"
+                  alt="Vũng Tàu 6"
+                  data-full="image/trip/vung-tau/vung-tau-6.jpg"
+                  data-caption="Một tấm hình chân dung dễ thương."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-7.jpg"
+                  alt="Vũng Tàu 7"
+                  data-full="image/trip/vung-tau/vung-tau-7.jpg"
+                  data-caption="Nụ cười rạng rỡ giữa gió biển."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-8.jpg"
+                  alt="Vũng Tàu 8"
+                  data-full="image/trip/vung-tau/vung-tau-8.jpg"
+                  data-caption="Bậc thang lên cao, phía sau là cảnh đẹp."
+                />
+              </div>
+              <div class="photo">
+                <img
+                  src="image/trip/vung-tau/vung-tau-9.jpg"
+                  alt="Vũng Tàu 9"
+                  data-full="image/trip/vung-tau/vung-tau-9.jpg"
+                  data-caption="Chú nấm màu sắc – chi tiết nhỏ nhưng đáng nhớ."
+                />
+              </div>
+            </div>
+          </article>
         </section>
       </main>
 
@@ -297,5 +1382,93 @@
         cùng nhau.
       </footer>
     </div>
+    <script>
+      (function () {
+        const backdrop = document.createElement("div");
+        backdrop.className = "lightbox-backdrop";
+        backdrop.id = "lightbox";
+        backdrop.innerHTML = `
+          <div class="lightbox" role="dialog" aria-modal="true">
+            <div class="lightbox-header">
+              <div id="lightbox-title">Khoảnh khắc đi chơi</div>
+              <button class="lightbox-close" id="lightbox-close" aria-label="Đóng">
+                ✕
+              </button>
+            </div>
+            <div class="lightbox-body">
+              <button class="lightbox-arrow prev" id="lightbox-prev" aria-label="Ảnh trước">
+                ‹
+              </button>
+              <img id="lightbox-img" src="" alt="" />
+              <button class="lightbox-arrow next" id="lightbox-next" aria-label="Ảnh tiếp theo">
+                ›
+              </button>
+            </div>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+          </div>
+        `;
+        document.body.appendChild(backdrop);
+
+        const imgEl = document.getElementById("lightbox-img");
+        const captionEl = document.getElementById("lightbox-caption");
+        const titleEl = document.getElementById("lightbox-title");
+        const btnClose = document.getElementById("lightbox-close");
+        const btnPrev = document.getElementById("lightbox-prev");
+        const btnNext = document.getElementById("lightbox-next");
+
+        const photos = Array.from(document.querySelectorAll(".photo img"));
+        let currentIndex = -1;
+
+        function openAt(index) {
+          if (!photos.length) return;
+          if (index < 0) index = photos.length - 1;
+          if (index >= photos.length) index = 0;
+          currentIndex = index;
+
+          const img = photos[index];
+          const full = img.getAttribute("data-full") || img.src;
+          const caption = img.getAttribute("data-caption") || img.alt || "";
+
+          imgEl.src = full;
+          imgEl.alt = img.alt || "";
+          captionEl.textContent = caption;
+          titleEl.textContent = img.alt || "Khoảnh khắc đi chơi";
+          backdrop.classList.add("open");
+        }
+
+        photos.forEach((img, idx) => {
+          img.addEventListener("click", () => openAt(idx));
+        });
+
+        function close() {
+          backdrop.classList.remove("open");
+          imgEl.src = "";
+        }
+
+        btnClose.addEventListener("click", close);
+        backdrop.addEventListener("click", (e) => {
+          if (e.target === backdrop) {
+            close();
+          }
+        });
+
+        btnPrev.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openAt(currentIndex - 1);
+        });
+
+        btnNext.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openAt(currentIndex + 1);
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (!backdrop.classList.contains("open")) return;
+          if (e.key === "Escape") close();
+          if (e.key === "ArrowLeft") openAt(currentIndex - 1);
+          if (e.key === "ArrowRight") openAt(currentIndex + 1);
+        });
+      })();
+    </script>
   </body>
 </html>

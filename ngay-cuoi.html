@@ -17,12 +17,13 @@
 
       body {
         margin: 0;
-        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
+        font-family: "Nunito", "Poppins", system-ui, sans-serif;
         background: radial-gradient(circle at top left, #ffe1f2, #f4f4ff 45%, #ffe6d5);
         color: #111827;
         position: relative;
         overflow-x: hidden;
+        font-size: 15px;
+        line-height: 1.55;
       }
 
       body::before,
@@ -337,7 +338,7 @@
           rgba(167, 139, 250, 0.1) 100%
         );
         font-size: 14px;
-        font-family: "Nunito", "Poppins", sans-serif;
+        font-family: "Nunito", sans-serif;
         color: #475569;
         line-height: 1.65;
         border: 1px solid rgba(244, 114, 182, 0.2);
@@ -376,7 +377,7 @@
       .photo-block {
         border-radius: 18px;
         overflow: hidden;
-        height: 340px;
+        height: 400px;
         box-shadow: 0 18px 30px rgba(15, 23, 30, 0.18);
         margin-bottom: 10px;
       }
@@ -409,23 +410,32 @@
 
       .gallery-title {
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 700;
+        font-family: "Nunito", "Poppins", sans-serif;
         margin-bottom: 4px;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         display: flex;
         align-items: center;
+        background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
       .gallery-sub {
-        font-size: 13px;
+        font-family: "Nunito", sans-serif;
+        font-size: 14px;
         color: #6b7280;
         margin-bottom: 8px;
+        line-height: 1.5;
       }
 
       .gallery-note {
+        font-family: "Nunito", sans-serif;
         font-size: 13px;
         color: #374151;
+        line-height: 1.6;
         padding: 10px 12px;
         border-radius: 14px;
         background: linear-gradient(
@@ -434,6 +444,43 @@
           rgba(59, 130, 246, 0.06)
         );
         margin-bottom: 14px;
+      }
+
+      .gallery-subsection {
+        margin-top: 22px;
+      }
+
+      .gallery-subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .gallery-subsection-title {
+        font-family: "Nunito", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #6d28d9;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        letter-spacing: 0.02em;
+      }
+
+      .gallery-subsection-title::before {
+        content: "";
+        width: 4px;
+        height: 18px;
+        border-radius: 2px;
+        background: linear-gradient(180deg, #ec4899, #a855f7);
+      }
+
+      .gallery-subsection-desc {
+        font-family: "Nunito", sans-serif;
+        font-size: 13px;
+        color: #5b21b6;
+        line-height: 1.5;
+        margin: -4px 0 12px 0;
+        opacity: 0.92;
       }
 
       .gallery-grid {
@@ -597,6 +644,8 @@
               <img src="image/cuoi-nha-trai/trai-1.jpg" alt="Nhà trai" />
               <img src="image/bao-hy/bao-1.JPG" alt="Báo hỷ" />
               <img src="image/cuoi-nha-gai/gai-2.JPG" alt="Khoảnh khắc vui" />
+              <img src="image/hinh-cong/cong-2.JPG" alt="Cổng cưới" />
+              <img src="image/cuoi-nha-trai/trai-2.jpg" alt="Nhà trai" />
             </div>
           </aside>
         </section>
@@ -608,93 +657,55 @@
             Hình gia đình, họ hàng, bạn bè bên nhà gái trong ngày cưới.
           </div>
           <div class="gallery-note">
-            Đây là nơi mày viết cảm xúc về bên nhà vợ: không khí ở nhà gái, những
-            người quan trọng, khoảnh khắc làm mày nhớ nhất.
+            Bên nhà vợ (Cira) ngày đó đông vui lắm: họ hàng, bạn bè, không khí ấm áp. Những khoảnh khắc ở nhà gái từ sáng đến tiệc chiều là kỉ niệm hai đứa nhớ mãi.
           </div>
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-1.JPG" alt="Nhà gái 1" />
-              <div class="gallery-label">Nhà gái</div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Lễ thánh đường</div>
+            <p class="gallery-subsection-desc">Thánh lễ cưới tại nhà thờ — hai đứa trao nhẫn và lời hứa trước Chúa cùng hai họ.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-1.JPG" alt="Nhà gái - Lễ thánh đường" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-2.JPG" alt="Nhà gái - Lễ thánh đường" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-3.JPG" alt="Nhà gái - Lễ thánh đường" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-4.JPG" alt="Nhà gái - Lễ thánh đường" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-5.JPG" alt="Nhà gái - Lễ thánh đường" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-6.JPG" alt="Nhà gái - Lễ thánh đường" /><div class="gallery-label">Nhà gái</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-2.JPG" alt="Nhà gái 2" />
-              <div class="gallery-label">Nhà gái</div>
+          </div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Bưng mâm quả cưới đến nhà cô dâu</div>
+            <p class="gallery-subsection-desc">Đoàn nhà trai mang lễ vật sang nhà gái — không khí trang trọng mà ấm cúng.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-7.JPG" alt="Nhà gái - Gia đình" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-8.JPG" alt="Nhà gái - Gia đình" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-9.JPG" alt="Nhà gái - Gia đình" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-10.JPG" alt="Nhà gái - Gia đình" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-11.JPG" alt="Nhà gái - Gia đình" /><div class="gallery-label">Nhà gái</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-3.JPG" alt="Nhà gái 3" />
-              <div class="gallery-label">Nhà gái</div>
+          </div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Lễ sân khấu</div>
+            <p class="gallery-subsection-desc">Lễ ra mắt trên sân khấu, cảm ơn khách và nhận lời chúc phúc từ mọi người.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-12.JPG" alt="Nhà gái - Lễ sân khấu" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-13.JPG" alt="Nhà gái - Lễ sân khấu" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-14.JPG" alt="Nhà gái - Lễ sân khấu" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-15.JPG" alt="Nhà gái - Lễ sân khấu" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-16.JPG" alt="Nhà gái - Lễ sân khấu" /><div class="gallery-label">Nhà gái</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-4.JPG" alt="Nhà gái 4" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-5.JPG" alt="Nhà gái 5" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-6.JPG" alt="Nhà gái 6" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-7.JPG" alt="Nhà gái 7" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-8.JPG" alt="Nhà gái 8" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-9.JPG" alt="Nhà gái 9" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-10.JPG" alt="Nhà gái 10" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-11.JPG" alt="Nhà gái 11" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-12.JPG" alt="Nhà gái 12" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-13.JPG" alt="Nhà gái 13" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-14.JPG" alt="Nhà gái 14" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-15.JPG" alt="Nhà gái 15" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-16.JPG" alt="Nhà gái 16" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-17.JPG" alt="Nhà gái 17" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-18.JPG" alt="Nhà gái 18" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-19.JPG" alt="Nhà gái 19" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-20.JPG" alt="Nhà gái 20" />
-              <div class="gallery-label">Nhà gái</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-gai/gai-21.JPG" alt="Nhà gái 21" />
-              <div class="gallery-label">Nhà gái</div>
+          </div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Khoảnh khắc vui vẻ</div>
+            <p class="gallery-subsection-desc">Những phút giây vui vẻ bên gia đình, bạn bè trong ngày cưới bên nhà gái.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-17.JPG" alt="Nhà gái - Khoảnh khắc vui" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-18.JPG" alt="Nhà gái - Khoảnh khắc vui" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-19.JPG" alt="Nhà gái - Khoảnh khắc vui" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-20.JPG" alt="Nhà gái - Khoảnh khắc vui" /><div class="gallery-label">Nhà gái</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-gai/gai-21.JPG" alt="Nhà gái - Khoảnh khắc vui" /><div class="gallery-label">Nhà gái</div></div>
             </div>
           </div>
         </section>
@@ -703,82 +714,56 @@
         <section class="gallery-section" id="nha-trai">
           <div class="gallery-title"><i class="fa-solid fa-person title-icon"></i>Nhà trai</div>
           <div class="gallery-sub">
-            Không khí bên nhà trai: chuẩn bị, lên xe, tới rước dâu.
+            Chuẩn bị đi rước dâu mọi người rất náo nức, ai cũng muốn được đi.
           </div>
           <div class="gallery-note">
-            Đoạn này mày có thể kể cảm xúc của mình, của ba mẹ, anh em bên nhà
-            trai trước giờ rước dâu, mấy câu chuyện hài trong lúc chuẩn bị.
+            Ba mẹ chú rể kêu may quá con tui cũng cưới được vợ. tranh thủ đi rước dâu rồi uống rượu mừng thôi nào.
           </div>
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-1.jpg" alt="Nhà trai 1" />
-              <div class="gallery-label">Nhà trai</div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Chuẩn bị đồ đi rước dâu thôi</div>
+            <p class="gallery-subsection-desc">Chỉn chu từng bộ đồ, bó hoa — chuẩn bị lên đường sang nhà cô dâu.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-1.jpg" alt="Chuẩn bị rước dâu" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-2.jpg" alt="Chuẩn bị rước dâu" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-3.jpg" alt="Chuẩn bị rước dâu" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-4.jpg" alt="Chuẩn bị rước dâu" /><div class="gallery-label">Nhà trai</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-2.jpg" alt="Nhà trai 2" />
-              <div class="gallery-label">Nhà trai</div>
+          </div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Đã rước được dâu giờ đi về nek</div>
+            <p class="gallery-subsection-desc">Đoàn rước dâu lên đường về nhà trai — niềm vui tràn ngập.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-5.jpg" alt="Rước dâu về" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-6.jpg" alt="Rước dâu về" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-7.jpg" alt="Rước dâu về" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-8.jpg" alt="Rước dâu về" /><div class="gallery-label">Nhà trai</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-3.jpg" alt="Nhà trai 3" />
-              <div class="gallery-label">Nhà trai</div>
+          </div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Mẹ đón được dâu hiền rồi, dắt tay vào nhà nào</div>
+            <p class="gallery-subsection-desc">Mẹ chồng đón dâu, dắt vào nhà — khoảnh khắc ấm áp của hai gia đình.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-9.jpg" alt="Mẹ đón dâu" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-10.jpg" alt="Mẹ đón dâu" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-11.jpg" alt="Mẹ đón dâu" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-12.jpg" alt="Mẹ đón dâu" /><div class="gallery-label">Nhà trai</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-4.jpg" alt="Nhà trai 4" />
-              <div class="gallery-label">Nhà trai</div>
+          </div>
+
+          <div class="gallery-subsection">
+            <div class="gallery-subsection-title">Lễ gia tiên tại gia đình</div>
+            <p class="gallery-subsection-desc">Lễ bái gia tiên tại nhà trai — thành kính trình với ông bà tổ tiên.</p>
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-13.jpg" alt="Lễ gia tiên" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-14.jpg" alt="Lễ gia tiên" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-15.jpg" alt="Lễ gia tiên" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-16.jpg" alt="Lễ gia tiên" /><div class="gallery-label">Nhà trai</div></div>
+              <div class="gallery-item"><img src="image/cuoi-nha-trai/trai-17.jpg" alt="Lễ gia tiên" /><div class="gallery-label">Nhà trai</div></div>
             </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-5.jpg" alt="Nhà trai 5" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-6.jpg" alt="Nhà trai 6" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-7.jpg" alt="Nhà trai 7" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-8.jpg" alt="Nhà trai 8" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-9.jpg" alt="Nhà trai 9" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-10.jpg" alt="Nhà trai 10" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-11.jpg" alt="Nhà trai 11" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-12.jpg" alt="Nhà trai 12" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-13.jpg" alt="Nhà trai 13" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-14.jpg" alt="Nhà trai 14" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-15.jpg" alt="Nhà trai 15" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-16.jpg" alt="Nhà trai 16" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            <div class="gallery-item">
-              <img src="image/cuoi-nha-trai/trai-17.jpg" alt="Nhà trai 17" />
-              <div class="gallery-label">Nhà trai</div>
-            </div>
-            </div>
+          </div>
         </section>
 
         <!-- CỔNG CƯỚI / DECOR -->
@@ -788,8 +773,7 @@
             Cổng hoa, bàn gallery, góc decor mà hai đứa thích nhất.
           </div>
           <div class="gallery-note">
-            Viết vài dòng về theme trang trí, màu chủ đạo, ai là người chọn mẫu
-            cổng, có chi tiết nào làm hai đứa thích nhất.
+            Cổng hoa và góc trang trí là phần hai đứa rất để ý — màu sắc, bông, bàn gallery đều gói trọn không khí ngày cưới.
           </div>
           <div class="gallery-grid">
             <div class="gallery-item">
@@ -814,8 +798,7 @@
             Những tấm thiệp, bảng báo hỷ, câu chữ dễ thương mà hai đứa chọn.
           </div>
           <div class="gallery-note">
-            Ghi lại lý do mày chọn mẫu thiệp này, câu chữ nào hai đứa thích
-            nhất, hoặc lời nhắn nhủ dành cho những người nhận thiệp.
+            Thiệp báo hỷ và tiệc mừng bên bạn bè — câu chữ, hình ảnh đều là kỉ niệm hai đứa gửi đến mọi người.
           </div>
           <div class="gallery-grid">
             <div class="gallery-item">

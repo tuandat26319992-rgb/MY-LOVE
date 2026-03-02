@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -18,7 +18,7 @@
         margin: 0;
         font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top left, #ffe1f2, #f4f4ff 45%, #ffe6d5);
+        background: radial-gradient(circle at top left, #dbeafe, #eff6ff 45%, #e0f2fe);
         color: #111827;
       }
 
@@ -69,19 +69,50 @@
         font-size: 14px;
       }
 
-      nav a {
-        margin-left: 16px;
-        font-size: 13px;
-        text-decoration: none;
-        color: #64748b;
-        padding: 4px 8px;
-        border-radius: 999px;
-        transition: all 0.2s ease;
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
-      nav a:hover {
+      .nav-link {
+        position: relative;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #6b7280;
+        padding: 6px 10px;
+        border-radius: 999px;
+        transition: color 0.2s ease, background-color 0.2s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 4px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ec4899, #6366f1);
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .nav-link:hover {
         color: #111827;
-        background: rgba(248, 250, 252, 0.9);
+        background-color: rgba(248, 250, 252, 0.9);
+      }
+
+      .nav-link.active {
+        color: #111827;
+        background-color: rgba(248, 250, 252, 0.9);
+      }
+
+      .nav-link.active::after {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       main {
@@ -92,14 +123,12 @@
       }
 
       .title-block h1 {
-        font-size: 36px;
-        margin-bottom: 4px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: linear-gradient(120deg, #ec4899, #6366f1);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        font-family: "DM Serif Display", "Times New Roman", serif;
+        font-size: 42px;
+        margin-bottom: 6px;
+        letter-spacing: 0;
+        text-transform: none;
+        color: #0f172a;
       }
 
       .title-block p {
@@ -257,7 +286,12 @@
       .album-note {
         font-size: 12px;
         color: #6b7280;
-        margin-top: 8px;
+        margin-top: 10px;
+        line-height: 1.6;
+        max-width: 280px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .lightbox-backdrop {
@@ -381,9 +415,10 @@
             <div>MY LOVE STORY</div>
           </div>
           <nav>
-            <a href="index.html">Trang chính</a>
-            <a href="moi-quen.html">Mới quen</a>
-            <a href="ngay-cuoi.html">Ngày cưới</a>
+            <a href="index.html" class="nav-link">Trang chính</a>
+            <a href="moi-quen.html" class="nav-link">Mới quen</a>
+            <a href="di-choi.html" class="nav-link active">Đi chơi</a>
+            <a href="ngay-cuoi.html" class="nav-link">Ngày cưới</a>
           </nav>
         </div>
       </header>
@@ -589,12 +624,10 @@
               </div>
             </div>
             <p class="album-note">
-              Chỉ cần giữ nguyên tên file như trong các thư mục
-              <code>can-tho</code>, <code>da-nang</code>, <code>di-xa</code>,
-              <code>lang-dai-hoc</code>, <code>lunar-new-year</code>,
-              <code>nam-cat-tien</code>, <code>tot-nghiep</code>,
-              <code>trung-thu&amp;noel</code>, <code>vung-tau</code>. Mọi thứ còn
-              lại trang sẽ tự hiển thị.
+              Đây không phải là những tấm hình hoàn hảo, chỉ là những khoảnh khắc
+              rất bình thường tụi mình đã đi qua cùng nhau. Nhưng chính mấy điều
+              “bình thường” đó, nhìn lại mới thấy tụi mình đã thương nhau và lớn
+              lên với nhau như thế nào.
             </p>
           </aside>
         </section>
